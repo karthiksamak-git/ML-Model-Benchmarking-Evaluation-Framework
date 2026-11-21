@@ -274,8 +274,8 @@ npm run build         # static export
 Deployment notes:
 
 - The site is fully static (`output: "export"`). Vercel does not run Python, MLflow or
-  training. Deploy with **Root Directory = `web`**, or use the root `vercel.json` which
-  installs and builds the `web` workspace and publishes `web/out`.
+  training. Set **Root Directory = `web`**; `web/vercel.json` then runs `npm ci`,
+  `npm run build` and publishes `out`.
 - Regenerate the data locally with `mlbe export` (and `mlbe figures`), commit the JSON, and
   redeploy.
 - No secrets or `.env` files are needed by the site. `mlruns/`, `mlflow.db`, datasets and
