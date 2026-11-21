@@ -1,0 +1,21 @@
+# Pinned for reproducibility. Torch is the CPU wheel; install with:
+#   pip install -r requirements.txt
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+torch==2.15.0+cpu
+numpy==2.5.5
+pandas==3.1.1
+scikit-learn==1.9.1
+scipy==1.18.1
+mlflow==3.18.0
+optuna==5.1.0
+pydantic==2.14.4
+pyyaml==6.0.4
+matplotlib==3.11.2
+seaborn==0.13.2
+psutil==7.2.2
+py-cpuinfo==9.0.0
+tqdm==4.70.1
+pytest==9.2.0
+hypothesis==6.170.17
+ruff==0.17.6

@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+htmlcov/
+
+# Experiment tracking / local artifacts (never committed)
+mlruns/
+mlruns_artifacts/
+mlflow.db
+mlflow.db-*
+artifacts/
+data/
+*.pt
+*.pth
+*.pkl
+*.joblib
+*.npz
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Node / Next.js
+node_modules/
+web/.next/
+web/out/
+web/.vercel/
+.vercel/
+*.tsbuildinfo
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db

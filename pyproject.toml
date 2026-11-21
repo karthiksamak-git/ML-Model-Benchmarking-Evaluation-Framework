@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mlbe"
+version = "0.1.0"
+description = "ml-bench-eval: ML model benchmarking, statistical comparison and automated evaluation rubrics"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "ml-bench-eval contributors" }]
+dependencies = [
+  "numpy",
+  "pandas",
+  "scikit-learn",
+  "scipy",
+  "torch",
+  "mlflow",
+  "optuna",
+  "pydantic",
+  "pyyaml",
+  "matplotlib",
+  "seaborn",
+  "psutil",
+  "py-cpuinfo",
+  "tqdm",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "hypothesis", "ruff"]
+
+[project.scripts]
+mlbe = "mlbe.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = [
+  "ignore::DeprecationWarning",
+  "ignore::FutureWarning",
+]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501", "B008"]

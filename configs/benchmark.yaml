@@ -1,0 +1,68 @@
+# Benchmark configuration: datasets, models, CV scheme, metrics, seeds.
+# Every value here is deliberately small enough for a laptop CPU.
+seed: 42
+cv:
+  n_splits: 5
+  n_repeats: 3
+quick:
+  n_splits: 3
+  n_repeats: 1
+  max_samples: 400
+  hpo_trials: 4
+  hpo_models: [hgb]
+metrics:
+  - accuracy
+  - balanced_accuracy
+  - f1_macro
+  - roc_auc_ovr
+  - log_loss
+  - brier
+  - ece
+performance:
+  latency_repeats: 40
+  latency_warmup: 5
+  batch_sizes: [1, 32, 128]
+  memory_sample: 512
+datasets:
+  breast_cancer:
+    kind: sklearn
+    loader: load_breast_cancer
+    image: false
+    description: "Breast Cancer Wisconsin (diagnostic), 569x30 binary"
+  wine:
+    kind: sklearn
+    loader: load_wine
+    image: false
+    description: "UCI Wine, 178x13, 3 classes"
+  digits:
+    kind: sklearn
+    loader: load_digits
+    image: false
+    description: "UCI Digits flattened, 1797x64, 10 classes"
+  digits_image:
+    kind: sklearn
+    loader: load_digits
+    image: true
+    image_shape: [8, 8]
+    description: "UCI Digits as 8x8 images for the CNN"
+  synthetic:
+    kind: synthetic
+    n_samples: 600
+    n_features: 20
+    n_informative: 8
+    n_redundant: 2
+    n_classes: 3
+    class_sep: 1.0
+    flip_y: 0.02
+    description: "make_classification with controllable difficulty"
+models:
+  tabular: [logreg, svm, knn, rf, hgb, mlp]
+  image: [cnn]
+  # CNN is only run on image datasets
+model_seeds: [0, 1, 2]
+paths:
+  tracking_uri: sqlite:///mlflow.db
+  artifact_root: ./mlruns_artifacts
+  experiment: ml-bench-eval
+  figures: figures
+  web_data: web/public/data
