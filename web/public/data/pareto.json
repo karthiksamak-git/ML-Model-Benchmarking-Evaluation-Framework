@@ -1,0 +1,296 @@
+{
+  "provenance": {
+    "git_hash": "62db549ae3e37c43425373a1949e7a563c50d246",
+    "generated_at": "2026-11-21T10:04:32+00:00",
+    "mlflow_experiment": "ml-bench-eval",
+    "source_run_ids": [
+      "05a1392b740342048599c29eb4a7e034",
+      "070d0b3a8a614c7c8302acb8a3f144c0",
+      "0d78aa1c81f8436ea3593b3ef8d2e7c3",
+      "0d7cc26f44fa480d94c681072a642cee",
+      "16c2dcd0aa004139afc6c61884cb6064",
+      "1bd4a7d8fe124aa9b654c510f28fcbfa",
+      "1fa76dad688f431ab3f8847a22c4cc68",
+      "307c8a89bc054ea08b3fbc6996236ab9",
+      "39e9f12e85e143f8b1c6195cbc40352d",
+      "4fcfdb5d08f74c1d9fb24205fc8efaee",
+      "53108fc075c84a7cae1374c9cecb3f36",
+      "56a70f307a9345ed944c3867674d3e16",
+      "5858d5bff3e2415582610f0ba4d7a0d3",
+      "6f27a87a421d495f846cd19381d7851e",
+      "84f3c21792eb4da4bacee1fda66ef025",
+      "95242133ce424e02aa8895d97b072d8b",
+      "a0899853a2964feda06bf08ad9fe08d3",
+      "a1ba26b648b54711898cb79e602b0b0a",
+      "b09726656e4d4a7aa907e5fec4753cfb",
+      "b1d4802a2aa8405ba33da6ccc9e4d118",
+      "bf00f95d47774f94855648d8dfb9cf32",
+      "c1b07cbabffe4e0fad7f7c574091f4ac",
+      "d93887ad3e2c4dc3967e8a9feaeaa3ed",
+      "e425d952c2b34122893e971d673ec0cc",
+      "eef595586243460b901fcf691d1d3cfe"
+    ],
+    "generated_by": "mlbe export"
+  },
+  "datasets": [
+    {
+      "dataset": "breast_cancer",
+      "points": [
+        {
+          "id": "hgb",
+          "model": "hgb",
+          "label": "HistGradientBoosting",
+          "accuracy": 0.9542928116752057,
+          "latency_p50_ms": 0.8978136504689852,
+          "model_size_mb": 0.21384258270263673,
+          "pareto": false
+        },
+        {
+          "id": "knn",
+          "model": "knn",
+          "label": "k-Nearest Neighbours",
+          "accuracy": 0.9666149148682917,
+          "latency_p50_ms": 0.5359528586268425,
+          "model_size_mb": 0.10932407379150391,
+          "pareto": false
+        },
+        {
+          "id": "logreg",
+          "model": "logreg",
+          "label": "Logistic Regression",
+          "accuracy": 0.9759716400144903,
+          "latency_p50_ms": 0.34272110400100547,
+          "model_size_mb": 0.001910845438639323,
+          "pareto": true
+        },
+        {
+          "id": "mlp",
+          "model": "mlp",
+          "label": "PyTorch MLP",
+          "accuracy": 0.9730424882264658,
+          "latency_p50_ms": 0.3390098301072915,
+          "model_size_mb": 0.030094083150227866,
+          "pareto": true
+        },
+        {
+          "id": "rf",
+          "model": "rf",
+          "label": "Random Forest",
+          "accuracy": 0.9548776069968432,
+          "latency_p50_ms": 12.330855514543751,
+          "model_size_mb": 0.444036610921224,
+          "pareto": false
+        },
+        {
+          "id": "svm",
+          "model": "svm",
+          "label": "RBF SVM",
+          "accuracy": 0.9759716400144903,
+          "latency_p50_ms": 0.3429544623941183,
+          "model_size_mb": 0.028330167134602863,
+          "pareto": false
+        }
+      ]
+    },
+    {
+      "dataset": "digits",
+      "points": [
+        {
+          "id": "hgb",
+          "model": "hgb",
+          "label": "HistGradientBoosting",
+          "accuracy": 0.957700402352213,
+          "latency_p50_ms": 7.2600498562678695,
+          "model_size_mb": 1.4410813013712565,
+          "pareto": false
+        },
+        {
+          "id": "knn",
+          "model": "knn",
+          "label": "k-Nearest Neighbours",
+          "accuracy": 0.9779253069225213,
+          "latency_p50_ms": 0.5540181184187531,
+          "model_size_mb": 0.7154245376586914,
+          "pareto": false
+        },
+        {
+          "id": "logreg",
+          "model": "logreg",
+          "label": "Logistic Regression",
+          "accuracy": 0.969767357887135,
+          "latency_p50_ms": 0.2945000460992257,
+          "model_size_mb": 0.007474581400553386,
+          "pareto": true
+        },
+        {
+          "id": "mlp",
+          "model": "mlp",
+          "label": "PyTorch MLP",
+          "accuracy": 0.9738434953058908,
+          "latency_p50_ms": 0.311613727050523,
+          "model_size_mb": 0.04136981964111328,
+          "pareto": true
+        },
+        {
+          "id": "rf",
+          "model": "rf",
+          "label": "Random Forest",
+          "accuracy": 0.9766269472815433,
+          "latency_p50_ms": 11.137694283388555,
+          "model_size_mb": 7.179441515604655,
+          "pareto": false
+        },
+        {
+          "id": "svm",
+          "model": "svm",
+          "label": "RBF SVM",
+          "accuracy": 0.9820055710306406,
+          "latency_p50_ms": 0.3600422215337555,
+          "model_size_mb": 0.4176478068033854,
+          "pareto": true
+        }
+      ]
+    },
+    {
+      "dataset": "digits_image",
+      "points": [
+        {
+          "id": "cnn",
+          "model": "cnn",
+          "label": "PyTorch CNN",
+          "accuracy": 0.975148044980914,
+          "latency_p50_ms": 0.24422071098039547,
+          "model_size_mb": 0.013950030008951822,
+          "pareto": true
+        }
+      ]
+    },
+    {
+      "dataset": "synthetic",
+      "points": [
+        {
+          "id": "hgb",
+          "model": "hgb",
+          "label": "HistGradientBoosting",
+          "accuracy": 0.7883333333333333,
+          "latency_p50_ms": 1.1872375461583335,
+          "model_size_mb": 0.3879702885945638,
+          "pareto": false
+        },
+        {
+          "id": "knn",
+          "model": "knn",
+          "label": "k-Nearest Neighbours",
+          "accuracy": 0.7261111111111112,
+          "latency_p50_ms": 0.5217361884812514,
+          "model_size_mb": 0.07834720611572266,
+          "pareto": false
+        },
+        {
+          "id": "logreg",
+          "model": "logreg",
+          "label": "Logistic Regression",
+          "accuracy": 0.7466666666666667,
+          "latency_p50_ms": 0.28543896817912656,
+          "model_size_mb": 0.0019356409708658855,
+          "pareto": true
+        },
+        {
+          "id": "mlp",
+          "model": "mlp",
+          "label": "PyTorch MLP",
+          "accuracy": 0.7983333333333333,
+          "latency_p50_ms": 0.30803986980269354,
+          "model_size_mb": 0.02774677276611328,
+          "pareto": true
+        },
+        {
+          "id": "rf",
+          "model": "rf",
+          "label": "Random Forest",
+          "accuracy": 0.8083333333333332,
+          "latency_p50_ms": 11.223344908406338,
+          "model_size_mb": 2.0976429621378583,
+          "pareto": false
+        },
+        {
+          "id": "svm",
+          "model": "svm",
+          "label": "RBF SVM",
+          "accuracy": 0.8083333333333333,
+          "latency_p50_ms": 0.3297604853287339,
+          "model_size_mb": 0.07187525431315105,
+          "pareto": true
+        }
+      ]
+    },
+    {
+      "dataset": "wine",
+      "points": [
+        {
+          "id": "hgb",
+          "model": "hgb",
+          "label": "HistGradientBoosting",
+          "accuracy": 0.9569312169312169,
+          "latency_p50_ms": 1.4643686435495813,
+          "model_size_mb": 0.15589580535888672,
+          "pareto": false
+        },
+        {
+          "id": "knn",
+          "model": "knn",
+          "label": "k-Nearest Neighbours",
+          "accuracy": 0.966031746031746,
+          "latency_p50_ms": 0.6764158063257734,
+          "model_size_mb": 0.019598960876464844,
+          "pareto": false
+        },
+        {
+          "id": "logreg",
+          "model": "logreg",
+          "label": "Logistic Regression",
+          "accuracy": 0.9887830687830689,
+          "latency_p50_ms": 0.3461175365373492,
+          "model_size_mb": 0.0016152064005533855,
+          "pareto": true
+        },
+        {
+          "id": "mlp",
+          "model": "mlp",
+          "label": "PyTorch MLP",
+          "accuracy": 0.9793650793650793,
+          "latency_p50_ms": 0.3073093791802724,
+          "model_size_mb": 0.02649084726969401,
+          "pareto": true
+        },
+        {
+          "id": "rf",
+          "model": "rf",
+          "label": "Random Forest",
+          "accuracy": 0.9848677248677248,
+          "latency_p50_ms": 10.957432895277938,
+          "model_size_mb": 0.2819269816080729,
+          "pareto": false
+        },
+        {
+          "id": "svm",
+          "model": "svm",
+          "label": "RBF SVM",
+          "accuracy": 0.985079365079365,
+          "latency_p50_ms": 0.31997883537163335,
+          "model_size_mb": 0.009207725524902344,
+          "pareto": true
+        }
+      ]
+    }
+  ],
+  "objectives": {
+    "maximize": [
+      "accuracy"
+    ],
+    "minimize": [
+      "latency_p50_ms",
+      "model_size_mb"
+    ]
+  }
+}

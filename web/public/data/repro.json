@@ -1,0 +1,110 @@
+{
+  "provenance": {
+    "git_hash": "62db549ae3e37c43425373a1949e7a563c50d246",
+    "generated_at": "2026-11-21T10:04:34+00:00",
+    "mlflow_experiment": "ml-bench-eval",
+    "source_run_ids": [
+      "380003d910ce4bfe8e68d9dd2e44c573"
+    ],
+    "generated_by": "mlbe export"
+  },
+  "pass": {
+    "source_run_id": "380003d910ce4bfe8e68d9dd2e44c573",
+    "model": "mlp",
+    "dataset": "wine",
+    "split_id": "wine/r2/f3",
+    "seed_used": 2045,
+    "seed_offset": 0,
+    "tolerance": 1e-05,
+    "max_abs_diff": 0.0,
+    "metrics_compared": {
+      "accuracy": {
+        "logged": 1.0,
+        "rerun": 1.0,
+        "abs_diff": 0.0
+      },
+      "balanced_accuracy": {
+        "logged": 1.0,
+        "rerun": 1.0,
+        "abs_diff": 0.0
+      },
+      "f1_macro": {
+        "logged": 1.0,
+        "rerun": 1.0,
+        "abs_diff": 0.0
+      },
+      "log_loss": {
+        "logged": 0.013064611170346643,
+        "rerun": 0.013064611170346643,
+        "abs_diff": 0.0
+      },
+      "brier": {
+        "logged": 0.0013246534961671868,
+        "rerun": 0.0013246534961671868,
+        "abs_diff": 0.0
+      },
+      "ece": {
+        "logged": 0.012670739812519125,
+        "rerun": 0.012670739812519125,
+        "abs_diff": 0.0
+      },
+      "roc_auc_ovr": {
+        "logged": 1.0,
+        "rerun": 1.0,
+        "abs_diff": 0.0
+      }
+    },
+    "status": "pass",
+    "git_hash": "10ca6fba43cc35a628d8ebd6a75e2bd510f5e720-dirty"
+  },
+  "fail_demo": {
+    "source_run_id": "380003d910ce4bfe8e68d9dd2e44c573",
+    "model": "mlp",
+    "dataset": "wine",
+    "split_id": "wine/r2/f3",
+    "seed_used": 2046,
+    "seed_offset": 1,
+    "tolerance": 1e-05,
+    "max_abs_diff": 8.295618886376634e-05,
+    "metrics_compared": {
+      "accuracy": {
+        "logged": 1.0,
+        "rerun": 1.0,
+        "abs_diff": 0.0
+      },
+      "balanced_accuracy": {
+        "logged": 1.0,
+        "rerun": 1.0,
+        "abs_diff": 0.0
+      },
+      "f1_macro": {
+        "logged": 1.0,
+        "rerun": 1.0,
+        "abs_diff": 0.0
+      },
+      "log_loss": {
+        "logged": 0.013064611170346643,
+        "rerun": 0.013111890120679958,
+        "abs_diff": 4.727895033331507e-05
+      },
+      "brier": {
+        "logged": 0.0013246534961671868,
+        "rerun": 0.0012416973073034205,
+        "abs_diff": 8.295618886376634e-05
+      },
+      "ece": {
+        "logged": 0.012670739812519125,
+        "rerun": 0.01275038813154453,
+        "abs_diff": 7.964831902540492e-05
+      },
+      "roc_auc_ovr": {
+        "logged": 1.0,
+        "rerun": 1.0,
+        "abs_diff": 0.0
+      }
+    },
+    "status": "fail",
+    "git_hash": "10ca6fba43cc35a628d8ebd6a75e2bd510f5e720-dirty"
+  },
+  "checked_at_unix": 1795254606.7540917
+}

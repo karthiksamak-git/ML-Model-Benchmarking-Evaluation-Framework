@@ -16,7 +16,7 @@ mlruns_artifacts/
 mlflow.db
 mlflow.db-*
 artifacts/
-data/
+/data/
 *.pt
 *.pth
 *.pkl

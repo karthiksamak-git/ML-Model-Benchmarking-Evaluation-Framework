@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "severity": {
+    "info_min": 0.85,
+    "warn_min": 0.6
+  },
+  "dataset_quality": {
+    "weights": {
+      "missing_values": 0.1,
+      "constant_columns": 0.06,
+      "duplicates": 0.08,
+      "conflicting_labels": 0.07,
+      "class_imbalance": 0.1,
+      "label_noise": 0.15,
+      "leakage": 0.12,
+      "outliers": 0.06,
+      "covariate_shift": 0.09,
+      "feature_redundancy": 0.05,
+      "low_information": 0.04,
+      "sample_adequacy": 0.08
+    },
+    "thresholds": {
+      "missing_rate_warn": 0.01,
+      "missing_rate_fail": 0.1,
+      "constant_unique_values": 1,
+      "near_constant_share": 0.005,
+      "duplicate_rate_warn": 0.005,
+      "duplicate_rate_fail": 0.05,
+      "conflict_rate_warn": 0.001,
+      "conflict_rate_fail": 0.02,
+      "near_duplicate_distance": 1e-06,
+      "imbalance_ratio_warn": 3.0,
+      "imbalance_ratio_fail": 9.0,
+      "minority_share_warn": 0.15,
+      "minority_share_fail": 0.05,
+      "label_noise_warn": 0.02,
+      "label_noise_fail": 0.1,
+      "label_noise_certainty": 0.85,
+      "label_noise_margin": 0.15,
+      "label_noise_rate_tolerance": 0.05,
+      "label_noise_relative_tolerance": 0.5,
+      "leakage_overlap_warn": 0.001,
+      "leakage_overlap_fail": 0.005,
+      "leakage_single_feature_accuracy": 0.98,
+      "outlier_iqr_factor": 4.0,
+      "outlier_robust_z": 6.0,
+      "outlier_rate_warn": 0.1,
+      "outlier_rate_fail": 0.22,
+      "adversarial_auc_warn": 0.65,
+      "adversarial_auc_fail": 0.8,
+      "high_correlation": 0.95,
+      "high_correlation_share_warn": 0.2,
+      "low_info_abs_corr": 0.05,
+      "low_info_share_warn": 0.5,
+      "min_samples_per_feature": 10,
+      "min_samples_per_class": 30
+    }
+  },
+  "model_correctness": {
+    "weights": {
+      "baseline_significance": 0.16,
+      "generalization_gap": 0.14,
+      "stability": 0.1,
+      "calibration": 0.12,
+      "per_class_performance": 0.12,
+      "robustness": 0.12,
+      "prediction_sanity": 0.08,
+      "reproducibility": 0.06,
+      "efficiency": 0.1
+    },
+    "thresholds": {
+      "baseline_margin_min": 0.0,
+      "baseline_alpha": 0.05,
+      "generalization_gap_warn": 0.08,
+      "generalization_gap_fail": 0.2,
+      "stability_std_warn": 0.02,
+      "stability_std_fail": 0.06,
+      "ece_warn": 0.05,
+      "ece_fail": 0.15,
+      "brier_warn": 0.15,
+      "brier_fail": 0.3,
+      "per_class_recall_warn": 0.7,
+      "per_class_recall_fail": 0.5,
+      "robustness_drop_warn": 0.05,
+      "robustness_drop_fail": 0.15,
+      "repro_metric_tolerance": 1e-09,
+      "repro_torch_tolerance": 1e-05,
+      "latency_budget_ms": 50.0,
+      "size_budget_mb": 20.0
+    }
+  },
+  "scoring": {
+    "overall_weights": {
+      "dataset_quality": 0.45,
+      "model_correctness": 0.55
+    },
+    "grades": [
+      {
+        "grade": "A",
+        "min": 90
+      },
+      {
+        "grade": "B",
+        "min": 80
+      },
+      {
+        "grade": "C",
+        "min": 70
+      },
+      {
+        "grade": "D",
+        "min": 60
+      },
+      {
+        "grade": "F",
+        "min": 0
+      }
+    ]
+  }
+}

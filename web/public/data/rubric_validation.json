@@ -1,0 +1,645 @@
+{
+  "provenance": {
+    "git_hash": "62db549ae3e37c43425373a1949e7a563c50d246",
+    "generated_at": "2026-11-21T10:04:34+00:00",
+    "mlflow_experiment": "ml-bench-eval",
+    "source_run_ids": [
+      "56a70f307a9345ed944c3867674d3e16",
+      "84f3c21792eb4da4bacee1fda66ef025",
+      "95242133ce424e02aa8895d97b072d8b",
+      "a0899853a2964feda06bf08ad9fe08d3",
+      "b1d4802a2aa8405ba33da6ccc9e4d118"
+    ],
+    "generated_by": "mlbe export"
+  },
+  "rows": [
+    {
+      "defect": "clean",
+      "expected_check": null,
+      "actual_severity": "info",
+      "detected": null,
+      "overall_score": 97.31,
+      "grade": "A",
+      "evidence": {}
+    },
+    {
+      "defect": "label_noise_5",
+      "expected_check": "label_noise",
+      "actual_severity": "warn",
+      "detected": true,
+      "overall_score": 94.31,
+      "grade": "A",
+      "evidence": {
+        "estimated_noise_rate": 0.0553,
+        "tolerance": 0.05,
+        "flagged_indices": [
+          36,
+          50,
+          51,
+          151,
+          165,
+          167,
+          169,
+          179,
+          184,
+          202,
+          204,
+          249,
+          281,
+          287,
+          294,
+          295,
+          298,
+          305,
+          309,
+          329,
+          333,
+          380
+        ],
+        "per_class_thresholds": {
+          "0": 0.9503,
+          "1": 0.9571
+        },
+        "oof_accuracy": 0.8994974874371859,
+        "n_flagged": 22,
+        "flagged_rate": 0.05527638190954774
+      },
+      "label_noise": {
+        "planted_rate": 0.05,
+        "estimated_rate": 0.0553,
+        "abs_error": 0.0053,
+        "within_tolerance": true,
+        "tolerance": 0.05,
+        "absolute_tolerance": 0.05,
+        "relative_tolerance": 0.5,
+        "identification": {
+          "precision": 0.7273,
+          "recall": 0.8,
+          "f1": 0.7619,
+          "true_positives": 16,
+          "n_predicted": 22,
+          "n_truth": 20
+        }
+      }
+    },
+    {
+      "defect": "label_noise_10",
+      "expected_check": "label_noise",
+      "actual_severity": "warn",
+      "detected": true,
+      "overall_score": 92.75,
+      "grade": "A",
+      "evidence": {
+        "estimated_noise_rate": 0.0854,
+        "tolerance": 0.05,
+        "flagged_indices": [
+          31,
+          32,
+          34,
+          36,
+          48,
+          69,
+          88,
+          109,
+          140,
+          151,
+          154,
+          157,
+          158,
+          169,
+          172,
+          189,
+          194,
+          211,
+          229,
+          236,
+          251,
+          255,
+          267,
+          272,
+          278,
+          283,
+          293,
+          299,
+          316,
+          317,
+          327,
+          339,
+          348,
+          360
+        ],
+        "per_class_thresholds": {
+          "0": 0.9391,
+          "1": 0.9189
+        },
+        "oof_accuracy": 0.8417085427135679,
+        "n_flagged": 34,
+        "flagged_rate": 0.08542713567839195
+      },
+      "label_noise": {
+        "planted_rate": 0.1,
+        "estimated_rate": 0.0854,
+        "abs_error": 0.0146,
+        "within_tolerance": true,
+        "tolerance": 0.05,
+        "absolute_tolerance": 0.05,
+        "relative_tolerance": 0.5,
+        "identification": {
+          "precision": 0.9118,
+          "recall": 0.775,
+          "f1": 0.8378,
+          "true_positives": 31,
+          "n_predicted": 34,
+          "n_truth": 40
+        }
+      }
+    },
+    {
+      "defect": "label_noise_20",
+      "expected_check": "label_noise",
+      "actual_severity": "fail",
+      "detected": true,
+      "overall_score": 88.59,
+      "grade": "B",
+      "evidence": {
+        "estimated_noise_rate": 0.1407,
+        "tolerance": 0.05,
+        "flagged_indices": [
+          15,
+          16,
+          20,
+          22,
+          27,
+          43,
+          50,
+          51,
+          59,
+          62,
+          65,
+          72,
+          79,
+          98,
+          125,
+          135,
+          139,
+          141,
+          151,
+          152,
+          157,
+          171,
+          173,
+          181,
+          182,
+          183,
+          189,
+          195,
+          221,
+          224,
+          227,
+          238,
+          243,
+          247,
+          248,
+          252,
+          258,
+          266,
+          272,
+          278,
+          280,
+          282,
+          283,
+          284,
+          286,
+          294,
+          304,
+          309,
+          316,
+          321,
+          348,
+          349,
+          360,
+          371,
+          376,
+          382
+        ],
+        "per_class_thresholds": {
+          "0": 0.8709,
+          "1": 0.8772
+        },
+        "oof_accuracy": 0.7336683417085427,
+        "n_flagged": 56,
+        "flagged_rate": 0.1407035175879397
+      },
+      "label_noise": {
+        "planted_rate": 0.2,
+        "estimated_rate": 0.1407,
+        "abs_error": 0.0593,
+        "within_tolerance": true,
+        "tolerance": 0.1,
+        "absolute_tolerance": 0.05,
+        "relative_tolerance": 0.5,
+        "identification": {
+          "precision": 0.9107,
+          "recall": 0.6375,
+          "f1": 0.75,
+          "true_positives": 51,
+          "n_predicted": 56,
+          "n_truth": 80
+        }
+      }
+    },
+    {
+      "defect": "duplicates_10",
+      "expected_check": "duplicates",
+      "actual_severity": "fail",
+      "detected": true,
+      "overall_score": 89.9,
+      "grade": "B",
+      "evidence": {
+        "n_rows": 438,
+        "n_unique_rows": 398,
+        "n_duplicate_rows": 40,
+        "duplicate_rate": 0.09132,
+        "n_conflicting_duplicates": 0,
+        "examples": []
+      }
+    },
+    {
+      "defect": "conflicting_duplicates_5",
+      "expected_check": "conflicting_labels",
+      "actual_severity": "fail",
+      "detected": true,
+      "overall_score": 87.58,
+      "grade": "B",
+      "evidence": {
+        "n_conflicting_groups": 10,
+        "n_conflicting_rows": 10,
+        "rate": 0.02392
+      }
+    },
+    {
+      "defect": "leaky_feature",
+      "expected_check": "leakage",
+      "actual_severity": "fail",
+      "detected": true,
+      "overall_score": 92.58,
+      "grade": "A",
+      "evidence": {
+        "exact_overlap_rows": 0,
+        "exact_overlap_rate": 0.0,
+        "near_duplicate_rows": 0,
+        "best_single_feature": "leak_target",
+        "best_single_feature_auc": 1.0
+      }
+    },
+    {
+      "defect": "missing_15",
+      "expected_check": "missing_values",
+      "actual_severity": "fail",
+      "detected": true,
+      "overall_score": 91.82,
+      "grade": "A",
+      "evidence": {
+        "overall_missing_rate": 0.10492,
+        "columns_with_missing": 30,
+        "n_columns": 30,
+        "affected_training_rows": 392,
+        "top_columns": [
+          {
+            "column": "concave points error",
+            "missing_rate": 0.13357
+          },
+          {
+            "column": "concavity error",
+            "missing_rate": 0.13005
+          },
+          {
+            "column": "mean radius",
+            "missing_rate": 0.11775
+          },
+          {
+            "column": "compactness error",
+            "missing_rate": 0.11599
+          },
+          {
+            "column": "worst texture",
+            "missing_rate": 0.11599
+          },
+          {
+            "column": "worst smoothness",
+            "missing_rate": 0.11599
+          },
+          {
+            "column": "mean compactness",
+            "missing_rate": 0.11424
+          },
+          {
+            "column": "radius error",
+            "missing_rate": 0.11424
+          }
+        ]
+      }
+    },
+    {
+      "defect": "outliers_10",
+      "expected_check": "outliers",
+      "actual_severity": "warn",
+      "detected": true,
+      "overall_score": 96.78,
+      "grade": "A",
+      "evidence": {
+        "outlier_rate": 0.1407,
+        "n_flagged": 56,
+        "iqr_rate": 0.1307,
+        "robust_z_rate": 0.191,
+        "isolation_forest_rate": 0.0528,
+        "agreement_rule": "flagged when >= 2 of 3 methods agree"
+      }
+    },
+    {
+      "defect": "covariate_shift",
+      "expected_check": "covariate_shift",
+      "actual_severity": "fail",
+      "detected": true,
+      "overall_score": 92.23,
+      "grade": "A",
+      "evidence": {
+        "adversarial_auc": 1.0,
+        "n_train": 398,
+        "n_test": 171
+      }
+    },
+    {
+      "defect": "imbalance",
+      "expected_check": "class_imbalance",
+      "actual_severity": "fail",
+      "detected": true,
+      "overall_score": 80.15,
+      "grade": "B",
+      "evidence": {
+        "class_counts": {
+          "0": 148,
+          "1": 5
+        },
+        "imbalance_ratio": 29.6,
+        "minority_share": 0.0327
+      }
+    },
+    {
+      "defect": "train_test_overlap_2",
+      "expected_check": "leakage",
+      "actual_severity": "fail",
+      "detected": true,
+      "overall_score": 85.39,
+      "grade": "B",
+      "evidence": {
+        "exact_overlap_rows": 8,
+        "exact_overlap_rate": 0.04469,
+        "near_duplicate_rows": 8,
+        "best_single_feature": "worst perimeter",
+        "best_single_feature_auc": 0.976
+      }
+    }
+  ],
+  "summary": {
+    "n_defect_datasets": 11,
+    "n_detected": 11,
+    "detection_rate": 1.0,
+    "clean_score": 97.31,
+    "clean_grade": "A",
+    "clean_false_alarm_checks": [],
+    "label_noise_tolerance": 0.05,
+    "label_noise_within_tolerance": 1.0,
+    "label_noise_mean_precision": 0.8499,
+    "label_noise_mean_recall": 0.7375,
+    "seed": 42
+  },
+  "label_noise_plot": [
+    {
+      "defect": "label_noise_5",
+      "expected_check": "label_noise",
+      "actual_severity": "warn",
+      "detected": true,
+      "overall_score": 94.31,
+      "grade": "A",
+      "evidence": {
+        "estimated_noise_rate": 0.0553,
+        "tolerance": 0.05,
+        "flagged_indices": [
+          36,
+          50,
+          51,
+          151,
+          165,
+          167,
+          169,
+          179,
+          184,
+          202,
+          204,
+          249,
+          281,
+          287,
+          294,
+          295,
+          298,
+          305,
+          309,
+          329,
+          333,
+          380
+        ],
+        "per_class_thresholds": {
+          "0": 0.9503,
+          "1": 0.9571
+        },
+        "oof_accuracy": 0.8994974874371859,
+        "n_flagged": 22,
+        "flagged_rate": 0.05527638190954774
+      },
+      "label_noise": {
+        "planted_rate": 0.05,
+        "estimated_rate": 0.0553,
+        "abs_error": 0.0053,
+        "within_tolerance": true,
+        "tolerance": 0.05,
+        "absolute_tolerance": 0.05,
+        "relative_tolerance": 0.5,
+        "identification": {
+          "precision": 0.7273,
+          "recall": 0.8,
+          "f1": 0.7619,
+          "true_positives": 16,
+          "n_predicted": 22,
+          "n_truth": 20
+        }
+      }
+    },
+    {
+      "defect": "label_noise_10",
+      "expected_check": "label_noise",
+      "actual_severity": "warn",
+      "detected": true,
+      "overall_score": 92.75,
+      "grade": "A",
+      "evidence": {
+        "estimated_noise_rate": 0.0854,
+        "tolerance": 0.05,
+        "flagged_indices": [
+          31,
+          32,
+          34,
+          36,
+          48,
+          69,
+          88,
+          109,
+          140,
+          151,
+          154,
+          157,
+          158,
+          169,
+          172,
+          189,
+          194,
+          211,
+          229,
+          236,
+          251,
+          255,
+          267,
+          272,
+          278,
+          283,
+          293,
+          299,
+          316,
+          317,
+          327,
+          339,
+          348,
+          360
+        ],
+        "per_class_thresholds": {
+          "0": 0.9391,
+          "1": 0.9189
+        },
+        "oof_accuracy": 0.8417085427135679,
+        "n_flagged": 34,
+        "flagged_rate": 0.08542713567839195
+      },
+      "label_noise": {
+        "planted_rate": 0.1,
+        "estimated_rate": 0.0854,
+        "abs_error": 0.0146,
+        "within_tolerance": true,
+        "tolerance": 0.05,
+        "absolute_tolerance": 0.05,
+        "relative_tolerance": 0.5,
+        "identification": {
+          "precision": 0.9118,
+          "recall": 0.775,
+          "f1": 0.8378,
+          "true_positives": 31,
+          "n_predicted": 34,
+          "n_truth": 40
+        }
+      }
+    },
+    {
+      "defect": "label_noise_20",
+      "expected_check": "label_noise",
+      "actual_severity": "fail",
+      "detected": true,
+      "overall_score": 88.59,
+      "grade": "B",
+      "evidence": {
+        "estimated_noise_rate": 0.1407,
+        "tolerance": 0.05,
+        "flagged_indices": [
+          15,
+          16,
+          20,
+          22,
+          27,
+          43,
+          50,
+          51,
+          59,
+          62,
+          65,
+          72,
+          79,
+          98,
+          125,
+          135,
+          139,
+          141,
+          151,
+          152,
+          157,
+          171,
+          173,
+          181,
+          182,
+          183,
+          189,
+          195,
+          221,
+          224,
+          227,
+          238,
+          243,
+          247,
+          248,
+          252,
+          258,
+          266,
+          272,
+          278,
+          280,
+          282,
+          283,
+          284,
+          286,
+          294,
+          304,
+          309,
+          316,
+          321,
+          348,
+          349,
+          360,
+          371,
+          376,
+          382
+        ],
+        "per_class_thresholds": {
+          "0": 0.8709,
+          "1": 0.8772
+        },
+        "oof_accuracy": 0.7336683417085427,
+        "n_flagged": 56,
+        "flagged_rate": 0.1407035175879397
+      },
+      "label_noise": {
+        "planted_rate": 0.2,
+        "estimated_rate": 0.1407,
+        "abs_error": 0.0593,
+        "within_tolerance": true,
+        "tolerance": 0.1,
+        "absolute_tolerance": 0.05,
+        "relative_tolerance": 0.5,
+        "identification": {
+          "precision": 0.9107,
+          "recall": 0.6375,
+          "f1": 0.75,
+          "true_positives": 51,
+          "n_predicted": 56,
+          "n_truth": 80
+        }
+      }
+    }
+  ]
+}

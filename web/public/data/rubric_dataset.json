@@ -1,0 +1,1657 @@
+{
+  "provenance": {
+    "git_hash": "62db549ae3e37c43425373a1949e7a563c50d246",
+    "generated_at": "2026-11-21T10:04:34+00:00",
+    "mlflow_experiment": "ml-bench-eval",
+    "source_run_ids": [
+      "56a70f307a9345ed944c3867674d3e16",
+      "84f3c21792eb4da4bacee1fda66ef025",
+      "95242133ce424e02aa8895d97b072d8b",
+      "a0899853a2964feda06bf08ad9fe08d3",
+      "b1d4802a2aa8405ba33da6ccc9e4d118"
+    ],
+    "generated_by": "mlbe export"
+  },
+  "category": "dataset_quality",
+  "score": 96.43,
+  "grade": "A",
+  "severity": "info",
+  "checks": [
+    {
+      "id": "missing_values",
+      "name": "Missing values",
+      "category": "dataset_quality",
+      "score": 1.0,
+      "severity": "info",
+      "evidence": {
+        "overall_missing_rate": 0.0,
+        "columns_with_missing": 0,
+        "n_columns": 30,
+        "affected_training_rows": 0,
+        "top_columns": []
+      },
+      "recommendation": "Impute or drop missing cells; if missingness is informative, encode it explicitly."
+    },
+    {
+      "id": "constant_columns",
+      "name": "Constant / near-constant columns",
+      "category": "dataset_quality",
+      "score": 1.0,
+      "severity": "info",
+      "evidence": {
+        "n_constant": 0,
+        "n_near_constant": 0,
+        "share": 0.0,
+        "constant_columns": [],
+        "near_constant_columns": []
+      },
+      "recommendation": "Drop constant columns; they carry no signal and inflate dimensionality."
+    },
+    {
+      "id": "duplicates",
+      "name": "Exact duplicate rows",
+      "category": "dataset_quality",
+      "score": 1.0,
+      "severity": "info",
+      "evidence": {
+        "n_rows": 455,
+        "n_unique_rows": 455,
+        "n_duplicate_rows": 0,
+        "duplicate_rate": 0.0,
+        "n_conflicting_duplicates": 0,
+        "examples": []
+      },
+      "recommendation": "De-duplicate before splitting, otherwise identical rows leak across folds."
+    },
+    {
+      "id": "conflicting_labels",
+      "name": "Duplicate rows with conflicting labels",
+      "category": "dataset_quality",
+      "score": 1.0,
+      "severity": "info",
+      "evidence": {
+        "n_conflicting_groups": 0,
+        "n_conflicting_rows": 0,
+        "rate": 0.0
+      },
+      "recommendation": "Resolve conflicting labels (relabel or drop); they cap achievable accuracy."
+    },
+    {
+      "id": "class_imbalance",
+      "name": "Class imbalance",
+      "category": "dataset_quality",
+      "score": 0.9481,
+      "severity": "info",
+      "evidence": {
+        "class_counts": {
+          "0": 169,
+          "1": 286
+        },
+        "imbalance_ratio": 1.692,
+        "minority_share": 0.3714
+      },
+      "recommendation": "Use stratified splits and class weights; report balanced accuracy and per-class recall."
+    },
+    {
+      "id": "label_noise",
+      "name": "Suspected label noise",
+      "category": "dataset_quality",
+      "score": 0.8846,
+      "severity": "info",
+      "evidence": {
+        "estimated_noise_rate": 0.0154,
+        "tolerance": 0.05,
+        "flagged_indices": [
+          32,
+          34,
+          35,
+          63,
+          205,
+          236,
+          301
+        ],
+        "per_class_thresholds": {
+          "0": 0.9797,
+          "1": 0.9901
+        },
+        "oof_accuracy": 0.9538461538461539,
+        "n_flagged": 7,
+        "flagged_rate": 0.015384615384615385
+      },
+      "recommendation": "Audit the flagged samples; relabel or remove confidently mislabelled points."
+    },
+    {
+      "id": "leakage",
+      "name": "Train/test leakage",
+      "category": "dataset_quality",
+      "score": 1.0,
+      "severity": "info",
+      "evidence": {
+        "exact_overlap_rows": 0,
+        "exact_overlap_rate": 0.0,
+        "near_duplicate_rows": 0,
+        "best_single_feature": "worst perimeter",
+        "best_single_feature_auc": 0.9728
+      },
+      "recommendation": "Re-split after de-duplication and remove target-derived features."
+    },
+    {
+      "id": "outliers",
+      "name": "Outliers (IQR / robust z / Isolation Forest)",
+      "category": "dataset_quality",
+      "score": 0.8846,
+      "severity": "info",
+      "evidence": {
+        "outlier_rate": 0.0769,
+        "n_flagged": 35,
+        "iqr_rate": 0.0549,
+        "robust_z_rate": 0.1055,
+        "isolation_forest_rate": 0.1055,
+        "agreement_rule": "flagged when >= 2 of 3 methods agree"
+      },
+      "recommendation": "Inspect flagged rows; winsorise or use models robust to heavy tails."
+    },
+    {
+      "id": "covariate_shift",
+      "name": "Covariate shift (adversarial validation)",
+      "category": "dataset_quality",
+      "score": 0.9448,
+      "severity": "info",
+      "evidence": {
+        "adversarial_auc": 0.5552,
+        "n_train": 455,
+        "n_test": 114
+      },
+      "recommendation": "Check collection or time period; consider importance weighting or domain adaptation."
+    },
+    {
+      "id": "feature_redundancy",
+      "name": "Feature redundancy",
+      "category": "dataset_quality",
+      "score": 0.9741,
+      "severity": "info",
+      "evidence": {
+        "share_pairs_above_threshold": 0.0345,
+        "threshold": 0.95,
+        "top_correlated_pairs": [
+          {
+            "a": "mean radius",
+            "b": "mean perimeter",
+            "correlation": 0.998
+          },
+          {
+            "a": "worst radius",
+            "b": "worst perimeter",
+            "correlation": 0.9941
+          },
+          {
+            "a": "mean radius",
+            "b": "mean area",
+            "correlation": 0.9868
+          },
+          {
+            "a": "mean perimeter",
+            "b": "mean area",
+            "correlation": 0.9863
+          },
+          {
+            "a": "worst radius",
+            "b": "worst area",
+            "correlation": 0.9835
+          }
+        ]
+      },
+      "recommendation": "Remove or combine highly correlated features to reduce variance and cost."
+    },
+    {
+      "id": "low_information",
+      "name": "Low-information features",
+      "category": "dataset_quality",
+      "score": 1.0,
+      "severity": "info",
+      "evidence": {
+        "share_below_threshold": 0.1,
+        "threshold_abs_correlation": 0.05,
+        "low_information_features": [
+          "mean fractal dimension",
+          "texture error",
+          "symmetry error"
+        ]
+      },
+      "recommendation": "Confirm with multivariate importance before dropping; univariate filters miss interactions."
+    },
+    {
+      "id": "sample_adequacy",
+      "name": "Sample-size adequacy",
+      "category": "dataset_quality",
+      "score": 1.0,
+      "severity": "info",
+      "evidence": {
+        "n_train": 455,
+        "n_features": 30,
+        "samples_per_feature": 15.17,
+        "min_samples_per_class": 169
+      },
+      "recommendation": "Collect more data (especially minority classes) or reduce dimensionality/regularise."
+    }
+  ],
+  "failing_checks": [],
+  "n_checks": 12,
+  "n_passed": 12,
+  "dataset": "breast_cancer",
+  "datasets": [
+    {
+      "category": "dataset_quality",
+      "score": 96.43,
+      "grade": "A",
+      "severity": "info",
+      "checks": [
+        {
+          "id": "missing_values",
+          "name": "Missing values",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "overall_missing_rate": 0.0,
+            "columns_with_missing": 0,
+            "n_columns": 30,
+            "affected_training_rows": 0,
+            "top_columns": []
+          },
+          "recommendation": "Impute or drop missing cells; if missingness is informative, encode it explicitly."
+        },
+        {
+          "id": "constant_columns",
+          "name": "Constant / near-constant columns",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "n_constant": 0,
+            "n_near_constant": 0,
+            "share": 0.0,
+            "constant_columns": [],
+            "near_constant_columns": []
+          },
+          "recommendation": "Drop constant columns; they carry no signal and inflate dimensionality."
+        },
+        {
+          "id": "duplicates",
+          "name": "Exact duplicate rows",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "n_rows": 455,
+            "n_unique_rows": 455,
+            "n_duplicate_rows": 0,
+            "duplicate_rate": 0.0,
+            "n_conflicting_duplicates": 0,
+            "examples": []
+          },
+          "recommendation": "De-duplicate before splitting, otherwise identical rows leak across folds."
+        },
+        {
+          "id": "conflicting_labels",
+          "name": "Duplicate rows with conflicting labels",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "n_conflicting_groups": 0,
+            "n_conflicting_rows": 0,
+            "rate": 0.0
+          },
+          "recommendation": "Resolve conflicting labels (relabel or drop); they cap achievable accuracy."
+        },
+        {
+          "id": "class_imbalance",
+          "name": "Class imbalance",
+          "category": "dataset_quality",
+          "score": 0.9481,
+          "severity": "info",
+          "evidence": {
+            "class_counts": {
+              "0": 169,
+              "1": 286
+            },
+            "imbalance_ratio": 1.692,
+            "minority_share": 0.3714
+          },
+          "recommendation": "Use stratified splits and class weights; report balanced accuracy and per-class recall."
+        },
+        {
+          "id": "label_noise",
+          "name": "Suspected label noise",
+          "category": "dataset_quality",
+          "score": 0.8846,
+          "severity": "info",
+          "evidence": {
+            "estimated_noise_rate": 0.0154,
+            "tolerance": 0.05,
+            "flagged_indices": [
+              32,
+              34,
+              35,
+              63,
+              205,
+              236,
+              301
+            ],
+            "per_class_thresholds": {
+              "0": 0.9797,
+              "1": 0.9901
+            },
+            "oof_accuracy": 0.9538461538461539,
+            "n_flagged": 7,
+            "flagged_rate": 0.015384615384615385
+          },
+          "recommendation": "Audit the flagged samples; relabel or remove confidently mislabelled points."
+        },
+        {
+          "id": "leakage",
+          "name": "Train/test leakage",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "exact_overlap_rows": 0,
+            "exact_overlap_rate": 0.0,
+            "near_duplicate_rows": 0,
+            "best_single_feature": "worst perimeter",
+            "best_single_feature_auc": 0.9728
+          },
+          "recommendation": "Re-split after de-duplication and remove target-derived features."
+        },
+        {
+          "id": "outliers",
+          "name": "Outliers (IQR / robust z / Isolation Forest)",
+          "category": "dataset_quality",
+          "score": 0.8846,
+          "severity": "info",
+          "evidence": {
+            "outlier_rate": 0.0769,
+            "n_flagged": 35,
+            "iqr_rate": 0.0549,
+            "robust_z_rate": 0.1055,
+            "isolation_forest_rate": 0.1055,
+            "agreement_rule": "flagged when >= 2 of 3 methods agree"
+          },
+          "recommendation": "Inspect flagged rows; winsorise or use models robust to heavy tails."
+        },
+        {
+          "id": "covariate_shift",
+          "name": "Covariate shift (adversarial validation)",
+          "category": "dataset_quality",
+          "score": 0.9448,
+          "severity": "info",
+          "evidence": {
+            "adversarial_auc": 0.5552,
+            "n_train": 455,
+            "n_test": 114
+          },
+          "recommendation": "Check collection or time period; consider importance weighting or domain adaptation."
+        },
+        {
+          "id": "feature_redundancy",
+          "name": "Feature redundancy",
+          "category": "dataset_quality",
+          "score": 0.9741,
+          "severity": "info",
+          "evidence": {
+            "share_pairs_above_threshold": 0.0345,
+            "threshold": 0.95,
+            "top_correlated_pairs": [
+              {
+                "a": "mean radius",
+                "b": "mean perimeter",
+                "correlation": 0.998
+              },
+              {
+                "a": "worst radius",
+                "b": "worst perimeter",
+                "correlation": 0.9941
+              },
+              {
+                "a": "mean radius",
+                "b": "mean area",
+                "correlation": 0.9868
+              },
+              {
+                "a": "mean perimeter",
+                "b": "mean area",
+                "correlation": 0.9863
+              },
+              {
+                "a": "worst radius",
+                "b": "worst area",
+                "correlation": 0.9835
+              }
+            ]
+          },
+          "recommendation": "Remove or combine highly correlated features to reduce variance and cost."
+        },
+        {
+          "id": "low_information",
+          "name": "Low-information features",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "share_below_threshold": 0.1,
+            "threshold_abs_correlation": 0.05,
+            "low_information_features": [
+              "mean fractal dimension",
+              "texture error",
+              "symmetry error"
+            ]
+          },
+          "recommendation": "Confirm with multivariate importance before dropping; univariate filters miss interactions."
+        },
+        {
+          "id": "sample_adequacy",
+          "name": "Sample-size adequacy",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "n_train": 455,
+            "n_features": 30,
+            "samples_per_feature": 15.17,
+            "min_samples_per_class": 169
+          },
+          "recommendation": "Collect more data (especially minority classes) or reduce dimensionality/regularise."
+        }
+      ],
+      "failing_checks": [],
+      "n_checks": 12,
+      "n_passed": 12,
+      "dataset": "breast_cancer"
+    },
+    {
+      "category": "dataset_quality",
+      "score": 88.67,
+      "grade": "B",
+      "severity": "fail",
+      "checks": [
+        {
+          "id": "missing_values",
+          "name": "Missing values",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "overall_missing_rate": 0.0,
+            "columns_with_missing": 0,
+            "n_columns": 64,
+            "affected_training_rows": 0,
+            "top_columns": []
+          },
+          "recommendation": "Impute or drop missing cells; if missingness is informative, encode it explicitly."
+        },
+        {
+          "id": "constant_columns",
+          "name": "Constant / near-constant columns",
+          "category": "dataset_quality",
+          "score": 0.6375,
+          "severity": "warn",
+          "evidence": {
+            "n_constant": 3,
+            "n_near_constant": 7,
+            "share": 0.1562,
+            "constant_columns": [
+              "pixel_0_0",
+              "pixel_4_0",
+              "pixel_4_7"
+            ],
+            "near_constant_columns": [
+              "pixel_1_0",
+              "pixel_2_0",
+              "pixel_3_0",
+              "pixel_3_7",
+              "pixel_5_0",
+              "pixel_6_0",
+              "pixel_7_0"
+            ]
+          },
+          "recommendation": "Drop constant columns; they carry no signal and inflate dimensionality."
+        },
+        {
+          "id": "duplicates",
+          "name": "Exact duplicate rows",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "n_rows": 1437,
+            "n_unique_rows": 1437,
+            "n_duplicate_rows": 0,
+            "duplicate_rate": 0.0,
+            "n_conflicting_duplicates": 0,
+            "examples": []
+          },
+          "recommendation": "De-duplicate before splitting, otherwise identical rows leak across folds."
+        },
+        {
+          "id": "conflicting_labels",
+          "name": "Duplicate rows with conflicting labels",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "n_conflicting_groups": 0,
+            "n_conflicting_rows": 0,
+            "rate": 0.0
+          },
+          "recommendation": "Resolve conflicting labels (relabel or drop); they cap achievable accuracy."
+        },
+        {
+          "id": "class_imbalance",
+          "name": "Class imbalance",
+          "category": "dataset_quality",
+          "score": 0.6902,
+          "severity": "warn",
+          "evidence": {
+            "class_counts": {
+              "0": 142,
+              "1": 146,
+              "2": 141,
+              "3": 147,
+              "4": 144,
+              "5": 146,
+              "6": 145,
+              "7": 143,
+              "8": 139,
+              "9": 144
+            },
+            "imbalance_ratio": 1.058,
+            "minority_share": 0.0967
+          },
+          "recommendation": "Use stratified splits and class weights; report balanced accuracy and per-class recall."
+        },
+        {
+          "id": "label_noise",
+          "name": "Suspected label noise",
+          "category": "dataset_quality",
+          "score": 0.9635,
+          "severity": "info",
+          "evidence": {
+            "estimated_noise_rate": 0.0049,
+            "tolerance": 0.05,
+            "flagged_indices": [
+              104,
+              400,
+              1244,
+              1273,
+              1337,
+              1411,
+              1430
+            ],
+            "per_class_thresholds": {
+              "0": 0.989,
+              "1": 0.9722,
+              "2": 0.9821,
+              "3": 0.9808,
+              "4": 0.9946,
+              "5": 0.9748,
+              "6": 0.9864,
+              "7": 0.9817,
+              "8": 0.9576,
+              "9": 0.9686
+            },
+            "oof_accuracy": 0.9631176061238692,
+            "n_flagged": 7,
+            "flagged_rate": 0.0048712595685455815
+          },
+          "recommendation": "Audit the flagged samples; relabel or remove confidently mislabelled points."
+        },
+        {
+          "id": "leakage",
+          "name": "Train/test leakage",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "exact_overlap_rows": 0,
+            "exact_overlap_rate": 0.0,
+            "near_duplicate_rows": 0,
+            "best_single_feature": "pixel_4_1",
+            "best_single_feature_auc": 0.9204
+          },
+          "recommendation": "Re-split after de-duplication and remove target-derived features."
+        },
+        {
+          "id": "outliers",
+          "name": "Outliers (IQR / robust z / Isolation Forest)",
+          "category": "dataset_quality",
+          "score": 0.1205,
+          "severity": "fail",
+          "evidence": {
+            "outlier_rate": 0.3918,
+            "n_flagged": 563,
+            "iqr_rate": 0.5665,
+            "robust_z_rate": 0.5122,
+            "isolation_forest_rate": 0.2387,
+            "agreement_rule": "flagged when >= 2 of 3 methods agree"
+          },
+          "recommendation": "Inspect flagged rows; winsorise or use models robust to heavy tails."
+        },
+        {
+          "id": "covariate_shift",
+          "name": "Covariate shift (adversarial validation)",
+          "category": "dataset_quality",
+          "score": 0.9742,
+          "severity": "info",
+          "evidence": {
+            "adversarial_auc": 0.5258,
+            "n_train": 1437,
+            "n_test": 360
+          },
+          "recommendation": "Check collection or time period; consider importance weighting or domain adaptation."
+        },
+        {
+          "id": "feature_redundancy",
+          "name": "Feature redundancy",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "share_pairs_above_threshold": 0.0,
+            "threshold": 0.95,
+            "top_correlated_pairs": [
+              {
+                "a": "pixel_0_2",
+                "b": "pixel_7_2",
+                "correlation": 0.9382
+              },
+              {
+                "a": "pixel_0_1",
+                "b": "pixel_7_1",
+                "correlation": 0.855
+              },
+              {
+                "a": "pixel_0_3",
+                "b": "pixel_7_3",
+                "correlation": 0.7674
+              },
+              {
+                "a": "pixel_1_5",
+                "b": "pixel_2_5",
+                "correlation": 0.7351
+              },
+              {
+                "a": "pixel_0_6",
+                "b": "pixel_1_6",
+                "correlation": 0.7328
+              }
+            ]
+          },
+          "recommendation": "Remove or combine highly correlated features to reduce variance and cost."
+        },
+        {
+          "id": "low_information",
+          "name": "Low-information features",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "share_below_threshold": 0.0625,
+            "threshold_abs_correlation": 0.05,
+            "low_information_features": [
+              "pixel_0_0",
+              "pixel_3_0",
+              "pixel_4_0",
+              "pixel_4_7"
+            ]
+          },
+          "recommendation": "Confirm with multivariate importance before dropping; univariate filters miss interactions."
+        },
+        {
+          "id": "sample_adequacy",
+          "name": "Sample-size adequacy",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "n_train": 1437,
+            "n_features": 64,
+            "samples_per_feature": 22.45,
+            "min_samples_per_class": 139
+          },
+          "recommendation": "Collect more data (especially minority classes) or reduce dimensionality/regularise."
+        }
+      ],
+      "failing_checks": [
+        {
+          "id": "constant_columns",
+          "severity": "warn",
+          "recommendation": "Drop constant columns; they carry no signal and inflate dimensionality."
+        },
+        {
+          "id": "class_imbalance",
+          "severity": "warn",
+          "recommendation": "Use stratified splits and class weights; report balanced accuracy and per-class recall."
+        },
+        {
+          "id": "outliers",
+          "severity": "fail",
+          "recommendation": "Inspect flagged rows; winsorise or use models robust to heavy tails."
+        }
+      ],
+      "n_checks": 12,
+      "n_passed": 9,
+      "dataset": "digits"
+    },
+    {
+      "category": "dataset_quality",
+      "score": 88.67,
+      "grade": "B",
+      "severity": "fail",
+      "checks": [
+        {
+          "id": "missing_values",
+          "name": "Missing values",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "overall_missing_rate": 0.0,
+            "columns_with_missing": 0,
+            "n_columns": 64,
+            "affected_training_rows": 0,
+            "top_columns": []
+          },
+          "recommendation": "Impute or drop missing cells; if missingness is informative, encode it explicitly."
+        },
+        {
+          "id": "constant_columns",
+          "name": "Constant / near-constant columns",
+          "category": "dataset_quality",
+          "score": 0.6375,
+          "severity": "warn",
+          "evidence": {
+            "n_constant": 3,
+            "n_near_constant": 7,
+            "share": 0.1562,
+            "constant_columns": [
+              "pixel_0_0",
+              "pixel_4_0",
+              "pixel_4_7"
+            ],
+            "near_constant_columns": [
+              "pixel_1_0",
+              "pixel_2_0",
+              "pixel_3_0",
+              "pixel_3_7",
+              "pixel_5_0",
+              "pixel_6_0",
+              "pixel_7_0"
+            ]
+          },
+          "recommendation": "Drop constant columns; they carry no signal and inflate dimensionality."
+        },
+        {
+          "id": "duplicates",
+          "name": "Exact duplicate rows",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "n_rows": 1437,
+            "n_unique_rows": 1437,
+            "n_duplicate_rows": 0,
+            "duplicate_rate": 0.0,
+            "n_conflicting_duplicates": 0,
+            "examples": []
+          },
+          "recommendation": "De-duplicate before splitting, otherwise identical rows leak across folds."
+        },
+        {
+          "id": "conflicting_labels",
+          "name": "Duplicate rows with conflicting labels",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "n_conflicting_groups": 0,
+            "n_conflicting_rows": 0,
+            "rate": 0.0
+          },
+          "recommendation": "Resolve conflicting labels (relabel or drop); they cap achievable accuracy."
+        },
+        {
+          "id": "class_imbalance",
+          "name": "Class imbalance",
+          "category": "dataset_quality",
+          "score": 0.6902,
+          "severity": "warn",
+          "evidence": {
+            "class_counts": {
+              "0": 142,
+              "1": 146,
+              "2": 141,
+              "3": 147,
+              "4": 144,
+              "5": 146,
+              "6": 145,
+              "7": 143,
+              "8": 139,
+              "9": 144
+            },
+            "imbalance_ratio": 1.058,
+            "minority_share": 0.0967
+          },
+          "recommendation": "Use stratified splits and class weights; report balanced accuracy and per-class recall."
+        },
+        {
+          "id": "label_noise",
+          "name": "Suspected label noise",
+          "category": "dataset_quality",
+          "score": 0.9635,
+          "severity": "info",
+          "evidence": {
+            "estimated_noise_rate": 0.0049,
+            "tolerance": 0.05,
+            "flagged_indices": [
+              104,
+              400,
+              1244,
+              1273,
+              1337,
+              1411,
+              1430
+            ],
+            "per_class_thresholds": {
+              "0": 0.989,
+              "1": 0.9722,
+              "2": 0.9821,
+              "3": 0.9808,
+              "4": 0.9946,
+              "5": 0.9748,
+              "6": 0.9864,
+              "7": 0.9817,
+              "8": 0.9576,
+              "9": 0.9686
+            },
+            "oof_accuracy": 0.9631176061238692,
+            "n_flagged": 7,
+            "flagged_rate": 0.0048712595685455815
+          },
+          "recommendation": "Audit the flagged samples; relabel or remove confidently mislabelled points."
+        },
+        {
+          "id": "leakage",
+          "name": "Train/test leakage",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "exact_overlap_rows": 0,
+            "exact_overlap_rate": 0.0,
+            "near_duplicate_rows": 0,
+            "best_single_feature": "pixel_4_1",
+            "best_single_feature_auc": 0.9204
+          },
+          "recommendation": "Re-split after de-duplication and remove target-derived features."
+        },
+        {
+          "id": "outliers",
+          "name": "Outliers (IQR / robust z / Isolation Forest)",
+          "category": "dataset_quality",
+          "score": 0.1205,
+          "severity": "fail",
+          "evidence": {
+            "outlier_rate": 0.3918,
+            "n_flagged": 563,
+            "iqr_rate": 0.5665,
+            "robust_z_rate": 0.5122,
+            "isolation_forest_rate": 0.2387,
+            "agreement_rule": "flagged when >= 2 of 3 methods agree"
+          },
+          "recommendation": "Inspect flagged rows; winsorise or use models robust to heavy tails."
+        },
+        {
+          "id": "covariate_shift",
+          "name": "Covariate shift (adversarial validation)",
+          "category": "dataset_quality",
+          "score": 0.9742,
+          "severity": "info",
+          "evidence": {
+            "adversarial_auc": 0.5258,
+            "n_train": 1437,
+            "n_test": 360
+          },
+          "recommendation": "Check collection or time period; consider importance weighting or domain adaptation."
+        },
+        {
+          "id": "feature_redundancy",
+          "name": "Feature redundancy",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "share_pairs_above_threshold": 0.0,
+            "threshold": 0.95,
+            "top_correlated_pairs": [
+              {
+                "a": "pixel_0_2",
+                "b": "pixel_7_2",
+                "correlation": 0.9382
+              },
+              {
+                "a": "pixel_0_1",
+                "b": "pixel_7_1",
+                "correlation": 0.855
+              },
+              {
+                "a": "pixel_0_3",
+                "b": "pixel_7_3",
+                "correlation": 0.7674
+              },
+              {
+                "a": "pixel_1_5",
+                "b": "pixel_2_5",
+                "correlation": 0.7351
+              },
+              {
+                "a": "pixel_0_6",
+                "b": "pixel_1_6",
+                "correlation": 0.7328
+              }
+            ]
+          },
+          "recommendation": "Remove or combine highly correlated features to reduce variance and cost."
+        },
+        {
+          "id": "low_information",
+          "name": "Low-information features",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "share_below_threshold": 0.0625,
+            "threshold_abs_correlation": 0.05,
+            "low_information_features": [
+              "pixel_0_0",
+              "pixel_3_0",
+              "pixel_4_0",
+              "pixel_4_7"
+            ]
+          },
+          "recommendation": "Confirm with multivariate importance before dropping; univariate filters miss interactions."
+        },
+        {
+          "id": "sample_adequacy",
+          "name": "Sample-size adequacy",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "n_train": 1437,
+            "n_features": 64,
+            "samples_per_feature": 22.45,
+            "min_samples_per_class": 139
+          },
+          "recommendation": "Collect more data (especially minority classes) or reduce dimensionality/regularise."
+        }
+      ],
+      "failing_checks": [
+        {
+          "id": "constant_columns",
+          "severity": "warn",
+          "recommendation": "Drop constant columns; they carry no signal and inflate dimensionality."
+        },
+        {
+          "id": "class_imbalance",
+          "severity": "warn",
+          "recommendation": "Use stratified splits and class weights; report balanced accuracy and per-class recall."
+        },
+        {
+          "id": "outliers",
+          "severity": "fail",
+          "recommendation": "Inspect flagged rows; winsorise or use models robust to heavy tails."
+        }
+      ],
+      "n_checks": 12,
+      "n_passed": 9,
+      "dataset": "digits_image"
+    },
+    {
+      "category": "dataset_quality",
+      "score": 91.98,
+      "grade": "A",
+      "severity": "fail",
+      "checks": [
+        {
+          "id": "missing_values",
+          "name": "Missing values",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "overall_missing_rate": 0.0,
+            "columns_with_missing": 0,
+            "n_columns": 20,
+            "affected_training_rows": 0,
+            "top_columns": []
+          },
+          "recommendation": "Impute or drop missing cells; if missingness is informative, encode it explicitly."
+        },
+        {
+          "id": "constant_columns",
+          "name": "Constant / near-constant columns",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "n_constant": 0,
+            "n_near_constant": 0,
+            "share": 0.0,
+            "constant_columns": [],
+            "near_constant_columns": []
+          },
+          "recommendation": "Drop constant columns; they carry no signal and inflate dimensionality."
+        },
+        {
+          "id": "duplicates",
+          "name": "Exact duplicate rows",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "n_rows": 480,
+            "n_unique_rows": 480,
+            "n_duplicate_rows": 0,
+            "duplicate_rate": 0.0,
+            "n_conflicting_duplicates": 0,
+            "examples": []
+          },
+          "recommendation": "De-duplicate before splitting, otherwise identical rows leak across folds."
+        },
+        {
+          "id": "conflicting_labels",
+          "name": "Duplicate rows with conflicting labels",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "n_conflicting_groups": 0,
+            "n_conflicting_rows": 0,
+            "rate": 0.0
+          },
+          "recommendation": "Resolve conflicting labels (relabel or drop); they cap achievable accuracy."
+        },
+        {
+          "id": "class_imbalance",
+          "name": "Class imbalance",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "class_counts": {
+              "0": 160,
+              "1": 160,
+              "2": 160
+            },
+            "imbalance_ratio": 1.0,
+            "minority_share": 0.3333
+          },
+          "recommendation": "Use stratified splits and class weights; report balanced accuracy and per-class recall."
+        },
+        {
+          "id": "label_noise",
+          "name": "Suspected label noise",
+          "category": "dataset_quality",
+          "score": 0.5042,
+          "severity": "fail",
+          "evidence": {
+            "estimated_noise_rate": 0.1083,
+            "tolerance": 0.05,
+            "flagged_indices": [
+              20,
+              28,
+              40,
+              50,
+              61,
+              69,
+              86,
+              89,
+              90,
+              94,
+              98,
+              101,
+              123,
+              130,
+              151,
+              177,
+              178,
+              179,
+              189,
+              190,
+              200,
+              203,
+              210,
+              211,
+              217,
+              219,
+              228,
+              232,
+              241,
+              245,
+              249,
+              263,
+              265,
+              272,
+              273,
+              277,
+              278,
+              280,
+              292,
+              301,
+              317,
+              337,
+              347,
+              391,
+              408,
+              411,
+              415,
+              425,
+              434,
+              446,
+              461,
+              471
+            ],
+            "per_class_thresholds": {
+              "0": 0.8972,
+              "1": 0.8905,
+              "2": 0.9077
+            },
+            "oof_accuracy": 0.7666666666666667,
+            "n_flagged": 52,
+            "flagged_rate": 0.10833333333333334
+          },
+          "recommendation": "Audit the flagged samples; relabel or remove confidently mislabelled points."
+        },
+        {
+          "id": "leakage",
+          "name": "Train/test leakage",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "exact_overlap_rows": 0,
+            "exact_overlap_rate": 0.0,
+            "near_duplicate_rows": 0,
+            "best_single_feature": "x6",
+            "best_single_feature_auc": 0.7824
+          },
+          "recommendation": "Re-split after de-duplication and remove target-derived features."
+        },
+        {
+          "id": "outliers",
+          "name": "Outliers (IQR / robust z / Isolation Forest)",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "outlier_rate": 0.0,
+            "n_flagged": 0,
+            "iqr_rate": 0.0,
+            "robust_z_rate": 0.0,
+            "isolation_forest_rate": 0.0479,
+            "agreement_rule": "flagged when >= 2 of 3 methods agree"
+          },
+          "recommendation": "Inspect flagged rows; winsorise or use models robust to heavy tails."
+        },
+        {
+          "id": "covariate_shift",
+          "name": "Covariate shift (adversarial validation)",
+          "category": "dataset_quality",
+          "score": 0.9853,
+          "severity": "info",
+          "evidence": {
+            "adversarial_auc": 0.5147,
+            "n_train": 480,
+            "n_test": 120
+          },
+          "recommendation": "Check collection or time period; consider importance weighting or domain adaptation."
+        },
+        {
+          "id": "feature_redundancy",
+          "name": "Feature redundancy",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "share_pairs_above_threshold": 0.0,
+            "threshold": 0.95,
+            "top_correlated_pairs": [
+              {
+                "a": "x4",
+                "b": "x7",
+                "correlation": -0.6223
+              },
+              {
+                "a": "x4",
+                "b": "x18",
+                "correlation": 0.5795
+              },
+              {
+                "a": "x7",
+                "b": "x16",
+                "correlation": 0.5361
+              },
+              {
+                "a": "x3",
+                "b": "x7",
+                "correlation": -0.5044
+              },
+              {
+                "a": "x7",
+                "b": "x18",
+                "correlation": -0.4673
+              }
+            ]
+          },
+          "recommendation": "Remove or combine highly correlated features to reduce variance and cost."
+        },
+        {
+          "id": "low_information",
+          "name": "Low-information features",
+          "category": "dataset_quality",
+          "score": 0.8875,
+          "severity": "info",
+          "evidence": {
+            "share_below_threshold": 0.4,
+            "threshold_abs_correlation": 0.05,
+            "low_information_features": [
+              "x0",
+              "x1",
+              "x2",
+              "x3",
+              "x5",
+              "x10",
+              "x13",
+              "x14"
+            ]
+          },
+          "recommendation": "Confirm with multivariate importance before dropping; univariate filters miss interactions."
+        },
+        {
+          "id": "sample_adequacy",
+          "name": "Sample-size adequacy",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "n_train": 480,
+            "n_features": 20,
+            "samples_per_feature": 24.0,
+            "min_samples_per_class": 160
+          },
+          "recommendation": "Collect more data (especially minority classes) or reduce dimensionality/regularise."
+        }
+      ],
+      "failing_checks": [
+        {
+          "id": "label_noise",
+          "severity": "fail",
+          "recommendation": "Audit the flagged samples; relabel or remove confidently mislabelled points."
+        }
+      ],
+      "n_checks": 12,
+      "n_passed": 11,
+      "dataset": "synthetic"
+    },
+    {
+      "category": "dataset_quality",
+      "score": 98.51,
+      "grade": "A",
+      "severity": "info",
+      "checks": [
+        {
+          "id": "missing_values",
+          "name": "Missing values",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "overall_missing_rate": 0.0,
+            "columns_with_missing": 0,
+            "n_columns": 13,
+            "affected_training_rows": 0,
+            "top_columns": []
+          },
+          "recommendation": "Impute or drop missing cells; if missingness is informative, encode it explicitly."
+        },
+        {
+          "id": "constant_columns",
+          "name": "Constant / near-constant columns",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "n_constant": 0,
+            "n_near_constant": 0,
+            "share": 0.0,
+            "constant_columns": [],
+            "near_constant_columns": []
+          },
+          "recommendation": "Drop constant columns; they carry no signal and inflate dimensionality."
+        },
+        {
+          "id": "duplicates",
+          "name": "Exact duplicate rows",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "n_rows": 142,
+            "n_unique_rows": 142,
+            "n_duplicate_rows": 0,
+            "duplicate_rate": 0.0,
+            "n_conflicting_duplicates": 0,
+            "examples": []
+          },
+          "recommendation": "De-duplicate before splitting, otherwise identical rows leak across folds."
+        },
+        {
+          "id": "conflicting_labels",
+          "name": "Duplicate rows with conflicting labels",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "n_conflicting_groups": 0,
+            "n_conflicting_rows": 0,
+            "rate": 0.0
+          },
+          "recommendation": "Resolve conflicting labels (relabel or drop); they cap achievable accuracy."
+        },
+        {
+          "id": "class_imbalance",
+          "name": "Class imbalance",
+          "category": "dataset_quality",
+          "score": 0.9625,
+          "severity": "info",
+          "evidence": {
+            "class_counts": {
+              "0": 47,
+              "1": 57,
+              "2": 38
+            },
+            "imbalance_ratio": 1.5,
+            "minority_share": 0.2676
+          },
+          "recommendation": "Use stratified splits and class weights; report balanced accuracy and per-class recall."
+        },
+        {
+          "id": "label_noise",
+          "name": "Suspected label noise",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "estimated_noise_rate": 0.0,
+            "tolerance": 0.05,
+            "flagged_indices": [],
+            "per_class_thresholds": {
+              "0": 0.9894,
+              "1": 0.9878,
+              "2": 0.9812
+            },
+            "oof_accuracy": 0.9507042253521126,
+            "n_flagged": 0,
+            "flagged_rate": 0.0
+          },
+          "recommendation": "Audit the flagged samples; relabel or remove confidently mislabelled points."
+        },
+        {
+          "id": "leakage",
+          "name": "Train/test leakage",
+          "category": "dataset_quality",
+          "score": 0.9755,
+          "severity": "info",
+          "evidence": {
+            "exact_overlap_rows": 0,
+            "exact_overlap_rate": 0.0,
+            "near_duplicate_rows": 0,
+            "best_single_feature": "proline",
+            "best_single_feature_auc": 0.9816
+          },
+          "recommendation": "Re-split after de-duplication and remove target-derived features."
+        },
+        {
+          "id": "outliers",
+          "name": "Outliers (IQR / robust z / Isolation Forest)",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "outlier_rate": 0.0,
+            "n_flagged": 0,
+            "iqr_rate": 0.0,
+            "robust_z_rate": 0.0,
+            "isolation_forest_rate": 0.1127,
+            "agreement_rule": "flagged when >= 2 of 3 methods agree"
+          },
+          "recommendation": "Inspect flagged rows; winsorise or use models robust to heavy tails."
+        },
+        {
+          "id": "covariate_shift",
+          "name": "Covariate shift (adversarial validation)",
+          "category": "dataset_quality",
+          "score": 0.909,
+          "severity": "info",
+          "evidence": {
+            "adversarial_auc": 0.591,
+            "n_train": 142,
+            "n_test": 36
+          },
+          "recommendation": "Check collection or time period; consider importance weighting or domain adaptation."
+        },
+        {
+          "id": "feature_redundancy",
+          "name": "Feature redundancy",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "share_pairs_above_threshold": 0.0,
+            "threshold": 0.95,
+            "top_correlated_pairs": [
+              {
+                "a": "total_phenols",
+                "b": "flavanoids",
+                "correlation": 0.8636
+              },
+              {
+                "a": "flavanoids",
+                "b": "od280/od315_of_diluted_wines",
+                "correlation": 0.7806
+              },
+              {
+                "a": "total_phenols",
+                "b": "od280/od315_of_diluted_wines",
+                "correlation": 0.6714
+              },
+              {
+                "a": "flavanoids",
+                "b": "proanthocyanins",
+                "correlation": 0.6593
+              },
+              {
+                "a": "alcohol",
+                "b": "proline",
+                "correlation": 0.6413
+              }
+            ]
+          },
+          "recommendation": "Remove or combine highly correlated features to reduce variance and cost."
+        },
+        {
+          "id": "low_information",
+          "name": "Low-information features",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "share_below_threshold": 0.0,
+            "threshold_abs_correlation": 0.05,
+            "low_information_features": []
+          },
+          "recommendation": "Confirm with multivariate importance before dropping; univariate filters miss interactions."
+        },
+        {
+          "id": "sample_adequacy",
+          "name": "Sample-size adequacy",
+          "category": "dataset_quality",
+          "score": 1.0,
+          "severity": "info",
+          "evidence": {
+            "n_train": 142,
+            "n_features": 13,
+            "samples_per_feature": 10.92,
+            "min_samples_per_class": 38
+          },
+          "recommendation": "Collect more data (especially minority classes) or reduce dimensionality/regularise."
+        }
+      ],
+      "failing_checks": [],
+      "n_checks": 12,
+      "n_passed": 12,
+      "dataset": "wine"
+    }
+  ],
+  "summary": {
+    "dataset_quality_score": 92.85,
+    "model_correctness_score": 94.06,
+    "overall_score": 93.51,
+    "overall_grade": "A",
+    "weights": {
+      "dataset_quality": 0.45,
+      "model_correctness": 0.55
+    }
+  },
+  "config": {
+    "version": 1,
+    "severity": {
+      "info_min": 0.85,
+      "warn_min": 0.6
+    },
+    "dataset_quality": {
+      "weights": {
+        "missing_values": 0.1,
+        "constant_columns": 0.06,
+        "duplicates": 0.08,
+        "conflicting_labels": 0.07,
+        "class_imbalance": 0.1,
+        "label_noise": 0.15,
+        "leakage": 0.12,
+        "outliers": 0.06,
+        "covariate_shift": 0.09,
+        "feature_redundancy": 0.05,
+        "low_information": 0.04,
+        "sample_adequacy": 0.08
+      },
+      "thresholds": {
+        "missing_rate_warn": 0.01,
+        "missing_rate_fail": 0.1,
+        "constant_unique_values": 1,
+        "near_constant_share": 0.005,
+        "duplicate_rate_warn": 0.005,
+        "duplicate_rate_fail": 0.05,
+        "conflict_rate_warn": 0.001,
+        "conflict_rate_fail": 0.02,
+        "near_duplicate_distance": 1e-06,
+        "imbalance_ratio_warn": 3.0,
+        "imbalance_ratio_fail": 9.0,
+        "minority_share_warn": 0.15,
+        "minority_share_fail": 0.05,
+        "label_noise_warn": 0.02,
+        "label_noise_fail": 0.1,
+        "label_noise_certainty": 0.85,
+        "label_noise_margin": 0.15,
+        "label_noise_rate_tolerance": 0.05,
+        "label_noise_relative_tolerance": 0.5,
+        "leakage_overlap_warn": 0.001,
+        "leakage_overlap_fail": 0.005,
+        "leakage_single_feature_accuracy": 0.98,
+        "outlier_iqr_factor": 4.0,
+        "outlier_robust_z": 6.0,
+        "outlier_rate_warn": 0.1,
+        "outlier_rate_fail": 0.22,
+        "adversarial_auc_warn": 0.65,
+        "adversarial_auc_fail": 0.8,
+        "high_correlation": 0.95,
+        "high_correlation_share_warn": 0.2,
+        "low_info_abs_corr": 0.05,
+        "low_info_share_warn": 0.5,
+        "min_samples_per_feature": 10,
+        "min_samples_per_class": 30
+      }
+    },
+    "model_correctness": {
+      "weights": {
+        "baseline_significance": 0.16,
+        "generalization_gap": 0.14,
+        "stability": 0.1,
+        "calibration": 0.12,
+        "per_class_performance": 0.12,
+        "robustness": 0.12,
+        "prediction_sanity": 0.08,
+        "reproducibility": 0.06,
+        "efficiency": 0.1
+      },
+      "thresholds": {
+        "baseline_margin_min": 0.0,
+        "baseline_alpha": 0.05,
+        "generalization_gap_warn": 0.08,
+        "generalization_gap_fail": 0.2,
+        "stability_std_warn": 0.02,
+        "stability_std_fail": 0.06,
+        "ece_warn": 0.05,
+        "ece_fail": 0.15,
+        "brier_warn": 0.15,
+        "brier_fail": 0.3,
+        "per_class_recall_warn": 0.7,
+        "per_class_recall_fail": 0.5,
+        "robustness_drop_warn": 0.05,
+        "robustness_drop_fail": 0.15,
+        "repro_metric_tolerance": 1e-09,
+        "repro_torch_tolerance": 1e-05,
+        "latency_budget_ms": 50.0,
+        "size_budget_mb": 20.0
+      }
+    },
+    "scoring": {
+      "overall_weights": {
+        "dataset_quality": 0.45,
+        "model_correctness": 0.55
+      },
+      "grades": [
+        {
+          "grade": "A",
+          "min": 90
+        },
+        {
+          "grade": "B",
+          "min": 80
+        },
+        {
+          "grade": "C",
+          "min": 70
+        },
+        {
+          "grade": "D",
+          "min": 60
+        },
+        {
+          "grade": "F",
+          "min": 0
+        }
+      ]
+    }
+  }
+}

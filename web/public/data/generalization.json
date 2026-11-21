@@ -1,0 +1,1054 @@
+{
+  "provenance": {
+    "git_hash": "62db549ae3e37c43425373a1949e7a563c50d246",
+    "generated_at": "2026-11-21T10:04:34+00:00",
+    "mlflow_experiment": "ml-bench-eval",
+    "source_run_ids": [
+      "56a70f307a9345ed944c3867674d3e16",
+      "84f3c21792eb4da4bacee1fda66ef025",
+      "95242133ce424e02aa8895d97b072d8b",
+      "a0899853a2964feda06bf08ad9fe08d3",
+      "b1d4802a2aa8405ba33da6ccc9e4d118"
+    ],
+    "generated_by": "mlbe export"
+  },
+  "learning_curves": [
+    {
+      "dataset": "breast_cancer",
+      "model": "logreg",
+      "fold": 0,
+      "fraction": 0.2,
+      "n_train": 76,
+      "accuracy": 0.9631578947368421,
+      "f1_macro": 0.9605329535001039
+    },
+    {
+      "dataset": "breast_cancer",
+      "model": "logreg",
+      "fold": 0,
+      "fraction": 0.4,
+      "n_train": 152,
+      "accuracy": 0.9789473684210527,
+      "f1_macro": 0.9775121316132087
+    },
+    {
+      "dataset": "breast_cancer",
+      "model": "logreg",
+      "fold": 0,
+      "fraction": 0.6,
+      "n_train": 227,
+      "accuracy": 0.9736842105263158,
+      "f1_macro": 0.9721203228173148
+    },
+    {
+      "dataset": "breast_cancer",
+      "model": "logreg",
+      "fold": 0,
+      "fraction": 0.8,
+      "n_train": 303,
+      "accuracy": 0.9631578947368421,
+      "f1_macro": 0.9605329535001039
+    },
+    {
+      "dataset": "breast_cancer",
+      "model": "logreg",
+      "fold": 0,
+      "fraction": 1.0,
+      "n_train": 379,
+      "accuracy": 0.968421052631579,
+      "f1_macro": 0.966268197419813
+    },
+    {
+      "dataset": "breast_cancer",
+      "model": "logreg",
+      "fold": 1,
+      "fraction": 0.2,
+      "n_train": 76,
+      "accuracy": 0.9421052631578948,
+      "f1_macro": 0.9363794100636206
+    },
+    {
+      "dataset": "breast_cancer",
+      "model": "logreg",
+      "fold": 1,
+      "fraction": 0.4,
+      "n_train": 152,
+      "accuracy": 0.968421052631579,
+      "f1_macro": 0.9656460945033751
+    },
+    {
+      "dataset": "breast_cancer",
+      "model": "logreg",
+      "fold": 1,
+      "fraction": 0.6,
+      "n_train": 227,
+      "accuracy": 0.9526315789473684,
+      "f1_macro": 0.9479467900520532
+    },
+    {
+      "dataset": "breast_cancer",
+      "model": "logreg",
+      "fold": 1,
+      "fraction": 0.8,
+      "n_train": 303,
+      "accuracy": 0.9631578947368421,
+      "f1_macro": 0.9597883597883599
+    },
+    {
+      "dataset": "breast_cancer",
+      "model": "logreg",
+      "fold": 1,
+      "fraction": 1.0,
+      "n_train": 379,
+      "accuracy": 0.968421052631579,
+      "f1_macro": 0.9656460945033751
+    },
+    {
+      "dataset": "breast_cancer",
+      "model": "logreg",
+      "fold": 2,
+      "fraction": 0.2,
+      "n_train": 76,
+      "accuracy": 0.9788359788359788,
+      "f1_macro": 0.9770296548371415
+    },
+    {
+      "dataset": "breast_cancer",
+      "model": "logreg",
+      "fold": 2,
+      "fraction": 0.4,
+      "n_train": 152,
+      "accuracy": 0.9788359788359788,
+      "f1_macro": 0.9774409166865601
+    },
+    {
+      "dataset": "breast_cancer",
+      "model": "logreg",
+      "fold": 2,
+      "fraction": 0.6,
+      "n_train": 228,
+      "accuracy": 0.9841269841269841,
+      "f1_macro": 0.983032588203609
+    },
+    {
+      "dataset": "breast_cancer",
+      "model": "logreg",
+      "fold": 2,
+      "fraction": 0.8,
+      "n_train": 304,
+      "accuracy": 0.9947089947089947,
+      "f1_macro": 0.9943108274886368
+    },
+    {
+      "dataset": "breast_cancer",
+      "model": "logreg",
+      "fold": 2,
+      "fraction": 1.0,
+      "n_train": 380,
+      "accuracy": 0.9894179894179894,
+      "f1_macro": 0.988655462184874
+    },
+    {
+      "dataset": "digits",
+      "model": "svm",
+      "fold": 0,
+      "fraction": 0.2,
+      "n_train": 240,
+      "accuracy": 0.9148580968280468,
+      "f1_macro": 0.9138563707854546
+    },
+    {
+      "dataset": "digits",
+      "model": "svm",
+      "fold": 0,
+      "fraction": 0.4,
+      "n_train": 479,
+      "accuracy": 0.9565943238731218,
+      "f1_macro": 0.9561299612684223
+    },
+    {
+      "dataset": "digits",
+      "model": "svm",
+      "fold": 0,
+      "fraction": 0.6,
+      "n_train": 719,
+      "accuracy": 0.9682804674457429,
+      "f1_macro": 0.9681305098348952
+    },
+    {
+      "dataset": "digits",
+      "model": "svm",
+      "fold": 0,
+      "fraction": 0.8,
+      "n_train": 958,
+      "accuracy": 0.9766277128547579,
+      "f1_macro": 0.9766374614647205
+    },
+    {
+      "dataset": "digits",
+      "model": "svm",
+      "fold": 0,
+      "fraction": 1.0,
+      "n_train": 1198,
+      "accuracy": 0.9833055091819699,
+      "f1_macro": 0.9833904162755018
+    },
+    {
+      "dataset": "digits",
+      "model": "svm",
+      "fold": 1,
+      "fraction": 0.2,
+      "n_train": 240,
+      "accuracy": 0.9198664440734557,
+      "f1_macro": 0.9199255540209851
+    },
+    {
+      "dataset": "digits",
+      "model": "svm",
+      "fold": 1,
+      "fraction": 0.4,
+      "n_train": 479,
+      "accuracy": 0.9749582637729549,
+      "f1_macro": 0.9750188751682375
+    },
+    {
+      "dataset": "digits",
+      "model": "svm",
+      "fold": 1,
+      "fraction": 0.6,
+      "n_train": 719,
+      "accuracy": 0.986644407345576,
+      "f1_macro": 0.9867059275087187
+    },
+    {
+      "dataset": "digits",
+      "model": "svm",
+      "fold": 1,
+      "fraction": 0.8,
+      "n_train": 958,
+      "accuracy": 0.988313856427379,
+      "f1_macro": 0.9882897761774767
+    },
+    {
+      "dataset": "digits",
+      "model": "svm",
+      "fold": 1,
+      "fraction": 1.0,
+      "n_train": 1198,
+      "accuracy": 0.993322203672788,
+      "f1_macro": 0.9933461752686789
+    },
+    {
+      "dataset": "digits",
+      "model": "svm",
+      "fold": 2,
+      "fraction": 0.2,
+      "n_train": 240,
+      "accuracy": 0.9415692821368948,
+      "f1_macro": 0.9417243735548766
+    },
+    {
+      "dataset": "digits",
+      "model": "svm",
+      "fold": 2,
+      "fraction": 0.4,
+      "n_train": 479,
+      "accuracy": 0.9682804674457429,
+      "f1_macro": 0.9682458120325658
+    },
+    {
+      "dataset": "digits",
+      "model": "svm",
+      "fold": 2,
+      "fraction": 0.6,
+      "n_train": 719,
+      "accuracy": 0.9666110183639399,
+      "f1_macro": 0.9668616071613612
+    },
+    {
+      "dataset": "digits",
+      "model": "svm",
+      "fold": 2,
+      "fraction": 0.8,
+      "n_train": 958,
+      "accuracy": 0.9716193656093489,
+      "f1_macro": 0.971559146723064
+    },
+    {
+      "dataset": "digits",
+      "model": "svm",
+      "fold": 2,
+      "fraction": 1.0,
+      "n_train": 1198,
+      "accuracy": 0.9732888146911519,
+      "f1_macro": 0.9731843460839684
+    },
+    {
+      "dataset": "digits_image",
+      "model": "cnn",
+      "fold": 0,
+      "fraction": 0.2,
+      "n_train": 240,
+      "accuracy": 0.9081803005008348,
+      "f1_macro": 0.9072768933382225
+    },
+    {
+      "dataset": "digits_image",
+      "model": "cnn",
+      "fold": 0,
+      "fraction": 0.4,
+      "n_train": 479,
+      "accuracy": 0.9348914858096828,
+      "f1_macro": 0.9347278204298692
+    },
+    {
+      "dataset": "digits_image",
+      "model": "cnn",
+      "fold": 0,
+      "fraction": 0.6,
+      "n_train": 719,
+      "accuracy": 0.9532554257095158,
+      "f1_macro": 0.9532971107404256
+    },
+    {
+      "dataset": "digits_image",
+      "model": "cnn",
+      "fold": 0,
+      "fraction": 0.8,
+      "n_train": 958,
+      "accuracy": 0.9515859766277128,
+      "f1_macro": 0.9515197721350486
+    },
+    {
+      "dataset": "digits_image",
+      "model": "cnn",
+      "fold": 0,
+      "fraction": 1.0,
+      "n_train": 1198,
+      "accuracy": 0.9749582637729549,
+      "f1_macro": 0.9750379677725824
+    },
+    {
+      "dataset": "digits_image",
+      "model": "cnn",
+      "fold": 1,
+      "fraction": 0.2,
+      "n_train": 240,
+      "accuracy": 0.8864774624373957,
+      "f1_macro": 0.8867139212768798
+    },
+    {
+      "dataset": "digits_image",
+      "model": "cnn",
+      "fold": 1,
+      "fraction": 0.4,
+      "n_train": 479,
+      "accuracy": 0.9332220367278798,
+      "f1_macro": 0.9336546113451888
+    },
+    {
+      "dataset": "digits_image",
+      "model": "cnn",
+      "fold": 1,
+      "fraction": 0.6,
+      "n_train": 719,
+      "accuracy": 0.9499165275459098,
+      "f1_macro": 0.9501648425508181
+    },
+    {
+      "dataset": "digits_image",
+      "model": "cnn",
+      "fold": 1,
+      "fraction": 0.8,
+      "n_train": 958,
+      "accuracy": 0.9716193656093489,
+      "f1_macro": 0.9715935012814345
+    },
+    {
+      "dataset": "digits_image",
+      "model": "cnn",
+      "fold": 1,
+      "fraction": 1.0,
+      "n_train": 1198,
+      "accuracy": 0.9749582637729549,
+      "f1_macro": 0.9748754240884401
+    },
+    {
+      "dataset": "digits_image",
+      "model": "cnn",
+      "fold": 2,
+      "fraction": 0.2,
+      "n_train": 240,
+      "accuracy": 0.8948247078464107,
+      "f1_macro": 0.8951375900459999
+    },
+    {
+      "dataset": "digits_image",
+      "model": "cnn",
+      "fold": 2,
+      "fraction": 0.4,
+      "n_train": 479,
+      "accuracy": 0.9332220367278798,
+      "f1_macro": 0.9337810952532649
+    },
+    {
+      "dataset": "digits_image",
+      "model": "cnn",
+      "fold": 2,
+      "fraction": 0.6,
+      "n_train": 719,
+      "accuracy": 0.9582637729549248,
+      "f1_macro": 0.9579196144946461
+    },
+    {
+      "dataset": "digits_image",
+      "model": "cnn",
+      "fold": 2,
+      "fraction": 0.8,
+      "n_train": 958,
+      "accuracy": 0.9599332220367279,
+      "f1_macro": 0.9598681831910876
+    },
+    {
+      "dataset": "digits_image",
+      "model": "cnn",
+      "fold": 2,
+      "fraction": 1.0,
+      "n_train": 1198,
+      "accuracy": 0.9649415692821369,
+      "f1_macro": 0.9647851458810457
+    },
+    {
+      "dataset": "synthetic",
+      "model": "svm",
+      "fold": 0,
+      "fraction": 0.2,
+      "n_train": 80,
+      "accuracy": 0.6,
+      "f1_macro": 0.5463134961586974
+    },
+    {
+      "dataset": "synthetic",
+      "model": "svm",
+      "fold": 0,
+      "fraction": 0.4,
+      "n_train": 160,
+      "accuracy": 0.725,
+      "f1_macro": 0.7260775277853077
+    },
+    {
+      "dataset": "synthetic",
+      "model": "svm",
+      "fold": 0,
+      "fraction": 0.6,
+      "n_train": 240,
+      "accuracy": 0.75,
+      "f1_macro": 0.7492602795633099
+    },
+    {
+      "dataset": "synthetic",
+      "model": "svm",
+      "fold": 0,
+      "fraction": 0.8,
+      "n_train": 320,
+      "accuracy": 0.775,
+      "f1_macro": 0.7740098277189036
+    },
+    {
+      "dataset": "synthetic",
+      "model": "svm",
+      "fold": 0,
+      "fraction": 1.0,
+      "n_train": 400,
+      "accuracy": 0.795,
+      "f1_macro": 0.7952770600057422
+    },
+    {
+      "dataset": "synthetic",
+      "model": "svm",
+      "fold": 1,
+      "fraction": 0.2,
+      "n_train": 80,
+      "accuracy": 0.7,
+      "f1_macro": 0.6968766001024065
+    },
+    {
+      "dataset": "synthetic",
+      "model": "svm",
+      "fold": 1,
+      "fraction": 0.4,
+      "n_train": 160,
+      "accuracy": 0.74,
+      "f1_macro": 0.7407118376282638
+    },
+    {
+      "dataset": "synthetic",
+      "model": "svm",
+      "fold": 1,
+      "fraction": 0.6,
+      "n_train": 240,
+      "accuracy": 0.735,
+      "f1_macro": 0.7379382147124082
+    },
+    {
+      "dataset": "synthetic",
+      "model": "svm",
+      "fold": 1,
+      "fraction": 0.8,
+      "n_train": 320,
+      "accuracy": 0.75,
+      "f1_macro": 0.751505287609267
+    },
+    {
+      "dataset": "synthetic",
+      "model": "svm",
+      "fold": 1,
+      "fraction": 1.0,
+      "n_train": 400,
+      "accuracy": 0.77,
+      "f1_macro": 0.7719870317272916
+    },
+    {
+      "dataset": "synthetic",
+      "model": "svm",
+      "fold": 2,
+      "fraction": 0.2,
+      "n_train": 80,
+      "accuracy": 0.775,
+      "f1_macro": 0.7736262445564771
+    },
+    {
+      "dataset": "synthetic",
+      "model": "svm",
+      "fold": 2,
+      "fraction": 0.4,
+      "n_train": 160,
+      "accuracy": 0.745,
+      "f1_macro": 0.7458965680387233
+    },
+    {
+      "dataset": "synthetic",
+      "model": "svm",
+      "fold": 2,
+      "fraction": 0.6,
+      "n_train": 240,
+      "accuracy": 0.835,
+      "f1_macro": 0.8351654726502659
+    },
+    {
+      "dataset": "synthetic",
+      "model": "svm",
+      "fold": 2,
+      "fraction": 0.8,
+      "n_train": 320,
+      "accuracy": 0.825,
+      "f1_macro": 0.8239864507250979
+    },
+    {
+      "dataset": "synthetic",
+      "model": "svm",
+      "fold": 2,
+      "fraction": 1.0,
+      "n_train": 400,
+      "accuracy": 0.83,
+      "f1_macro": 0.8291336083782926
+    },
+    {
+      "dataset": "wine",
+      "model": "logreg",
+      "fold": 0,
+      "fraction": 0.2,
+      "n_train": 24,
+      "accuracy": 0.95,
+      "f1_macro": 0.9500398533397099
+    },
+    {
+      "dataset": "wine",
+      "model": "logreg",
+      "fold": 0,
+      "fraction": 0.4,
+      "n_train": 47,
+      "accuracy": 0.9666666666666667,
+      "f1_macro": 0.9658994032395567
+    },
+    {
+      "dataset": "wine",
+      "model": "logreg",
+      "fold": 0,
+      "fraction": 0.6,
+      "n_train": 71,
+      "accuracy": 0.9833333333333333,
+      "f1_macro": 0.9828067913174295
+    },
+    {
+      "dataset": "wine",
+      "model": "logreg",
+      "fold": 0,
+      "fraction": 0.8,
+      "n_train": 94,
+      "accuracy": 0.9666666666666667,
+      "f1_macro": 0.9658994032395567
+    },
+    {
+      "dataset": "wine",
+      "model": "logreg",
+      "fold": 0,
+      "fraction": 1.0,
+      "n_train": 118,
+      "accuracy": 0.9666666666666667,
+      "f1_macro": 0.9658994032395567
+    },
+    {
+      "dataset": "wine",
+      "model": "logreg",
+      "fold": 1,
+      "fraction": 0.2,
+      "n_train": 24,
+      "accuracy": 0.9491525423728814,
+      "f1_macro": 0.9512952889135281
+    },
+    {
+      "dataset": "wine",
+      "model": "logreg",
+      "fold": 1,
+      "fraction": 0.4,
+      "n_train": 48,
+      "accuracy": 1.0,
+      "f1_macro": 1.0
+    },
+    {
+      "dataset": "wine",
+      "model": "logreg",
+      "fold": 1,
+      "fraction": 0.6,
+      "n_train": 71,
+      "accuracy": 0.9661016949152542,
+      "f1_macro": 0.9668114143920595
+    },
+    {
+      "dataset": "wine",
+      "model": "logreg",
+      "fold": 1,
+      "fraction": 0.8,
+      "n_train": 95,
+      "accuracy": 0.9661016949152542,
+      "f1_macro": 0.9668114143920595
+    },
+    {
+      "dataset": "wine",
+      "model": "logreg",
+      "fold": 1,
+      "fraction": 1.0,
+      "n_train": 119,
+      "accuracy": 0.9830508474576272,
+      "f1_macro": 0.9821551132463967
+    },
+    {
+      "dataset": "wine",
+      "model": "logreg",
+      "fold": 2,
+      "fraction": 0.2,
+      "n_train": 24,
+      "accuracy": 0.9491525423728814,
+      "f1_macro": 0.9518207282913166
+    },
+    {
+      "dataset": "wine",
+      "model": "logreg",
+      "fold": 2,
+      "fraction": 0.4,
+      "n_train": 48,
+      "accuracy": 1.0,
+      "f1_macro": 1.0
+    },
+    {
+      "dataset": "wine",
+      "model": "logreg",
+      "fold": 2,
+      "fraction": 0.6,
+      "n_train": 71,
+      "accuracy": 0.9830508474576272,
+      "f1_macro": 0.9843607928714312
+    },
+    {
+      "dataset": "wine",
+      "model": "logreg",
+      "fold": 2,
+      "fraction": 0.8,
+      "n_train": 95,
+      "accuracy": 1.0,
+      "f1_macro": 1.0
+    },
+    {
+      "dataset": "wine",
+      "model": "logreg",
+      "fold": 2,
+      "fraction": 1.0,
+      "n_train": 119,
+      "accuracy": 1.0,
+      "f1_macro": 1.0
+    }
+  ],
+  "robustness": [
+    {
+      "dataset": "breast_cancer",
+      "model": "logreg",
+      "kind": "gaussian_noise",
+      "level": 0.0,
+      "accuracy": 0.9736842105263158,
+      "drop": 0.0
+    },
+    {
+      "dataset": "breast_cancer",
+      "model": "logreg",
+      "kind": "gaussian_noise",
+      "level": 0.1,
+      "accuracy": 0.9649122807017544,
+      "drop": 0.00877192982456143
+    },
+    {
+      "dataset": "breast_cancer",
+      "model": "logreg",
+      "kind": "gaussian_noise",
+      "level": 0.25,
+      "accuracy": 0.956140350877193,
+      "drop": 0.01754385964912286
+    },
+    {
+      "dataset": "breast_cancer",
+      "model": "logreg",
+      "kind": "gaussian_noise",
+      "level": 0.5,
+      "accuracy": 0.9298245614035088,
+      "drop": 0.04385964912280704
+    },
+    {
+      "dataset": "breast_cancer",
+      "model": "logreg",
+      "kind": "gaussian_noise",
+      "level": 1.0,
+      "accuracy": 0.9122807017543859,
+      "drop": 0.061403508771929904
+    },
+    {
+      "dataset": "breast_cancer",
+      "model": "logreg",
+      "kind": "covariate_shift",
+      "level": 0.0,
+      "accuracy": 0.9736842105263158,
+      "drop": 0.0
+    },
+    {
+      "dataset": "breast_cancer",
+      "model": "logreg",
+      "kind": "covariate_shift",
+      "level": 0.5,
+      "accuracy": 0.8596491228070176,
+      "drop": 0.11403508771929827
+    },
+    {
+      "dataset": "breast_cancer",
+      "model": "logreg",
+      "kind": "covariate_shift",
+      "level": 1.0,
+      "accuracy": 0.5614035087719298,
+      "drop": 0.412280701754386
+    },
+    {
+      "dataset": "breast_cancer",
+      "model": "logreg",
+      "kind": "covariate_shift",
+      "level": 2.0,
+      "accuracy": 0.37719298245614036,
+      "drop": 0.5964912280701755
+    },
+    {
+      "dataset": "digits",
+      "model": "svm",
+      "kind": "gaussian_noise",
+      "level": 0.0,
+      "accuracy": 0.9833333333333333,
+      "drop": 0.0
+    },
+    {
+      "dataset": "digits",
+      "model": "svm",
+      "kind": "gaussian_noise",
+      "level": 0.1,
+      "accuracy": 0.9805555555555555,
+      "drop": 0.002777777777777768
+    },
+    {
+      "dataset": "digits",
+      "model": "svm",
+      "kind": "gaussian_noise",
+      "level": 0.25,
+      "accuracy": 0.9777777777777777,
+      "drop": 0.005555555555555536
+    },
+    {
+      "dataset": "digits",
+      "model": "svm",
+      "kind": "gaussian_noise",
+      "level": 0.5,
+      "accuracy": 0.9694444444444444,
+      "drop": 0.01388888888888884
+    },
+    {
+      "dataset": "digits",
+      "model": "svm",
+      "kind": "gaussian_noise",
+      "level": 1.0,
+      "accuracy": 0.6472222222222223,
+      "drop": 0.336111111111111
+    },
+    {
+      "dataset": "digits",
+      "model": "svm",
+      "kind": "covariate_shift",
+      "level": 0.0,
+      "accuracy": 0.9833333333333333,
+      "drop": 0.0
+    },
+    {
+      "dataset": "digits",
+      "model": "svm",
+      "kind": "covariate_shift",
+      "level": 0.5,
+      "accuracy": 0.9777777777777777,
+      "drop": 0.005555555555555536
+    },
+    {
+      "dataset": "digits",
+      "model": "svm",
+      "kind": "covariate_shift",
+      "level": 1.0,
+      "accuracy": 0.9555555555555556,
+      "drop": 0.02777777777777768
+    },
+    {
+      "dataset": "digits",
+      "model": "svm",
+      "kind": "covariate_shift",
+      "level": 2.0,
+      "accuracy": 0.1111111111111111,
+      "drop": 0.8722222222222222
+    },
+    {
+      "dataset": "digits_image",
+      "model": "cnn",
+      "kind": "gaussian_noise",
+      "level": 0.0,
+      "accuracy": 0.975,
+      "drop": 0.0
+    },
+    {
+      "dataset": "digits_image",
+      "model": "cnn",
+      "kind": "gaussian_noise",
+      "level": 0.1,
+      "accuracy": 0.9722222222222222,
+      "drop": 0.002777777777777768
+    },
+    {
+      "dataset": "digits_image",
+      "model": "cnn",
+      "kind": "gaussian_noise",
+      "level": 0.25,
+      "accuracy": 0.9555555555555556,
+      "drop": 0.019444444444444375
+    },
+    {
+      "dataset": "digits_image",
+      "model": "cnn",
+      "kind": "gaussian_noise",
+      "level": 0.5,
+      "accuracy": 0.9388888888888889,
+      "drop": 0.036111111111111094
+    },
+    {
+      "dataset": "digits_image",
+      "model": "cnn",
+      "kind": "gaussian_noise",
+      "level": 1.0,
+      "accuracy": 0.7916666666666666,
+      "drop": 0.18333333333333335
+    },
+    {
+      "dataset": "digits_image",
+      "model": "cnn",
+      "kind": "covariate_shift",
+      "level": 0.0,
+      "accuracy": 0.975,
+      "drop": 0.0
+    },
+    {
+      "dataset": "digits_image",
+      "model": "cnn",
+      "kind": "covariate_shift",
+      "level": 0.5,
+      "accuracy": 0.9666666666666667,
+      "drop": 0.008333333333333304
+    },
+    {
+      "dataset": "digits_image",
+      "model": "cnn",
+      "kind": "covariate_shift",
+      "level": 1.0,
+      "accuracy": 0.9444444444444444,
+      "drop": 0.030555555555555558
+    },
+    {
+      "dataset": "digits_image",
+      "model": "cnn",
+      "kind": "covariate_shift",
+      "level": 2.0,
+      "accuracy": 0.9,
+      "drop": 0.07499999999999996
+    },
+    {
+      "dataset": "synthetic",
+      "model": "svm",
+      "kind": "gaussian_noise",
+      "level": 0.0,
+      "accuracy": 0.7916666666666666,
+      "drop": 0.0
+    },
+    {
+      "dataset": "synthetic",
+      "model": "svm",
+      "kind": "gaussian_noise",
+      "level": 0.1,
+      "accuracy": 0.775,
+      "drop": 0.016666666666666607
+    },
+    {
+      "dataset": "synthetic",
+      "model": "svm",
+      "kind": "gaussian_noise",
+      "level": 0.25,
+      "accuracy": 0.7666666666666667,
+      "drop": 0.02499999999999991
+    },
+    {
+      "dataset": "synthetic",
+      "model": "svm",
+      "kind": "gaussian_noise",
+      "level": 0.5,
+      "accuracy": 0.7083333333333334,
+      "drop": 0.08333333333333326
+    },
+    {
+      "dataset": "synthetic",
+      "model": "svm",
+      "kind": "gaussian_noise",
+      "level": 1.0,
+      "accuracy": 0.5916666666666667,
+      "drop": 0.19999999999999996
+    },
+    {
+      "dataset": "synthetic",
+      "model": "svm",
+      "kind": "covariate_shift",
+      "level": 0.0,
+      "accuracy": 0.7916666666666666,
+      "drop": 0.0
+    },
+    {
+      "dataset": "synthetic",
+      "model": "svm",
+      "kind": "covariate_shift",
+      "level": 0.5,
+      "accuracy": 0.7666666666666667,
+      "drop": 0.02499999999999991
+    },
+    {
+      "dataset": "synthetic",
+      "model": "svm",
+      "kind": "covariate_shift",
+      "level": 1.0,
+      "accuracy": 0.7083333333333334,
+      "drop": 0.08333333333333326
+    },
+    {
+      "dataset": "synthetic",
+      "model": "svm",
+      "kind": "covariate_shift",
+      "level": 2.0,
+      "accuracy": 0.44166666666666665,
+      "drop": 0.35
+    },
+    {
+      "dataset": "wine",
+      "model": "logreg",
+      "kind": "gaussian_noise",
+      "level": 0.0,
+      "accuracy": 0.9722222222222222,
+      "drop": 0.0
+    },
+    {
+      "dataset": "wine",
+      "model": "logreg",
+      "kind": "gaussian_noise",
+      "level": 0.1,
+      "accuracy": 0.9722222222222222,
+      "drop": 0.0
+    },
+    {
+      "dataset": "wine",
+      "model": "logreg",
+      "kind": "gaussian_noise",
+      "level": 0.25,
+      "accuracy": 0.9722222222222222,
+      "drop": 0.0
+    },
+    {
+      "dataset": "wine",
+      "model": "logreg",
+      "kind": "gaussian_noise",
+      "level": 0.5,
+      "accuracy": 0.9722222222222222,
+      "drop": 0.0
+    },
+    {
+      "dataset": "wine",
+      "model": "logreg",
+      "kind": "gaussian_noise",
+      "level": 1.0,
+      "accuracy": 0.7777777777777778,
+      "drop": 0.19444444444444442
+    },
+    {
+      "dataset": "wine",
+      "model": "logreg",
+      "kind": "covariate_shift",
+      "level": 0.0,
+      "accuracy": 0.9722222222222222,
+      "drop": 0.0
+    },
+    {
+      "dataset": "wine",
+      "model": "logreg",
+      "kind": "covariate_shift",
+      "level": 0.5,
+      "accuracy": 0.9444444444444444,
+      "drop": 0.02777777777777779
+    },
+    {
+      "dataset": "wine",
+      "model": "logreg",
+      "kind": "covariate_shift",
+      "level": 1.0,
+      "accuracy": 0.8611111111111112,
+      "drop": 0.11111111111111105
+    },
+    {
+      "dataset": "wine",
+      "model": "logreg",
+      "kind": "covariate_shift",
+      "level": 2.0,
+      "accuracy": 0.6666666666666666,
+      "drop": 0.3055555555555556
+    }
+  ]
+}
